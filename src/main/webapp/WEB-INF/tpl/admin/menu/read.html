@@ -1,0 +1,33 @@
+<div class="page-header">
+	<h1>Menu</h1>
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">Article Info.</h3>
+	</div>
+	<div class="panel-body">
+		<dl class="dl-horizontal">
+			<dt>Menu ID</dt>
+			<dd>${info.id}</dd>
+			<dt>Module</dt>
+			<dd>${info.module}</dd>
+			<dt>Module ID</dt>
+			<dd>${info.module_id}</dd>
+			<dt>Menu Name</dt>
+			<dd>${info.menu_name}</dd>
+			<dt>Parent ID</dt>
+			<dd>${info.parent_id}</dd>
+			<dt>Sort</dt>
+			<dd>${info.sort}</dd>
+			<dt>Date</dt>
+			<dd>${info.reg_date}</dd>
+			<dd>
+				<br>
+				<input type="button" value="Back" class="btn btn-default" onclick="history.go(-1)">
+				<a href="update.jsp?id=${info.id}" class="btn btn-primary">Edit</a>
+				<a href="delete.jsp?id=${info.id}" class="btn btn-danger">Delete</a>
+			</dd>
+		</dl>
+	</div>
+</div>
