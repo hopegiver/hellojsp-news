@@ -19,6 +19,7 @@ f.addElement("type", info.s("type"), "title:'type', required:true");
 f.addElement("subject", info.s("subject"), "title:'subject', required:true");
 f.addElement("content", info.s("content"), "title:'content', required:true");
 f.addElement("photo_name", info.s("photo_name"), "title:'photo_name'");
+f.addElement("video_url", info.s("video_url"), "title:'video_url'");
 
 //Step5
 if(m.isPost() && f.validate()) {

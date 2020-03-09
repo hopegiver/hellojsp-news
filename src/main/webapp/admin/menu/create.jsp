@@ -7,6 +7,7 @@
 //Step1
 	MenuDao menu = new MenuDao();
 
+	DataSet parent = menu.find("status != -1 AND parent_id = 0 ");
 //Step2
 	f.addElement("menu_name", null, "title:'menu_name', required:true");
 	f.addElement("parent_id", null, "title:'parent_id'");
@@ -40,6 +41,7 @@ if(m.isPost() && f.validate()) {
 p.setLayout("blog");
 p.setBody("admin/menu/create");
 p.setVar("form_script", f.getScript());
+p.setVar("parent", parent);
 p.print();
 
 %>

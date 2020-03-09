@@ -2,7 +2,7 @@
 
     if(userId != null){
         //Step1
-        MenuDao menu = new MenuDao();
+      ContactDao contact = new ContactDao();
 
         //Step2
         f.addElement("s_keyword", null, null);
@@ -11,10 +11,10 @@
         ListManager lm = new ListManager();
         //lm.setDebug(out);
         lm.setRequest(request);
-        lm.setTable("tb_menu a");
+        lm.setTable("tb_contact a");
         lm.setFields("a.*");
         lm.addWhere("a.status != -1");
-        lm.addSearch("a.menu_name, a.module", f.get("s_keyword"), "LIKE");
+        lm.addSearch("a.first_name, a.subject, a.title, a.last_name, a.email, a.phone", f.get("s_keyword"), "LIKE");
         lm.setOrderBy("a.id DESC");
 
         //Step3
@@ -23,14 +23,11 @@
             list.put("reg_date", m.time("yyyy-MM-dd", list.s("reg_date")));
         }
 
-        DataSet parent = menu.find("status != -1 AND parent_id = 0 ");
-
         //Step4
         //    p.setDebug(out);
         p.setLayout("blog");
-        p.setBody("admin/menu/index");
+        p.setBody("admin/contact/index");
         p.setVar("list", list);
-        p.setVar("parent", parent);
         p.setVar("total_cnt", lm.getTotalNum());
         p.setVar("pagebar", lm.getPaging());
         p.setVar("form_script", f.getScript());

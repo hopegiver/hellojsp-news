@@ -1,29 +1,32 @@
 <div class="page-header">
-	<h1>News</h1>
+	<h1>Contact Information</h1>
 </div>
 
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h3 class="panel-title">Article Info.</h3>
+		<h3 class="panel-title">Article Contact Information</h3>
 	</div>
 	<div class="panel-body">
 		<dl class="dl-horizontal">
-			<dt>Type</dt>
-			<dd>${info.type}</dd>
+			<dt>Menu ID</dt>
+			<dd>${info.id}</dd>
+			<dt>First Name</dt>
+			<dd>${info.first_name}</dd>
+			<dt>Last Name</dt>
+			<dd>${info.last_name}</dd>
+			<dt>Phone Number</dt>
+			<dd>${info.phone}</dd>
+			<dt>Email</dt>
+			<dd>${info.email}</dd>
+			<dt>Title</dt>
+			<dd>${info.title}</dd>
 			<dt>Subject</dt>
 			<dd>${info.subject}</dd>
-			<dt>Content</dt>
-			<dd>${info.content}</dd>
-			<dt>Photo</dt>
-			<dd>${info.photo_name}</dd>
-			<dt>Video URL</dt>
-			<dd>${info.video_url}</dd>
 			<dt>Date</dt>
 			<dd>${info.reg_date}</dd>
 			<dd>
 				<br>
 				<input type="button" value="Back" class="btn btn-default" onclick="history.go(-1)">
-				<a href="update.jsp?id=${info.id}" class="btn btn-primary">Edit</a>
 				<a href="delete.jsp?id=${info.id}" class="btn btn-danger">Delete</a>
 			</dd>
 		</dl>

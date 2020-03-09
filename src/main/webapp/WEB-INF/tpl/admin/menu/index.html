@@ -32,7 +32,13 @@
 		<td><a href="read.jsp?id=${item.id}">${item.module}</a></td>
 		<td><a href="read.jsp?id=${item.id}">${item.menu_name}</a></td>
 		<td>${item.module_id}</td>
-		<td>${item.parent_id}</td>
+		<td>
+			#foreach($parent in $parent)
+				#if(${parent.id} == ${item.parent_id})
+					${parent.menu_name}
+				#end
+			#end
+		</td>
 		<td>${item.sort}</td>
 		<td>${item.reg_date}</td>
 		<td>

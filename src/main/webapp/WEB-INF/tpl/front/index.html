@@ -24,7 +24,14 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         #foreach($menuInfo in $menuInfo)
-                        <li><a data-scroll-nav="${menuInfo.module_id}" href="#${menuInfo.module}" >${menuInfo.menu_name}</a></li>
+                            #if(${menuInfo.parent_id} == 0)
+                                <li><a data-scroll-nav="${menuInfo.module_id}" href="#${menuInfo.module}" >${menuInfo.menu_name}</a></li>
+                                    #foreach($subMenu in $subMenu)
+                                        #if(${menuInfo.id} == ${subMenu.parent_id})
+                                            <li><a data-scroll-nav="${subMenu.module_id}" href="#${subMenu.module}" >${subMenu.menu_name}</a></li>
+                                        #end
+                                    #end
+                            #end
                         #end
                     </ul>
                 </div>
@@ -46,6 +53,13 @@
         #end
     </div> <!-- /#theme-main-banner -->
 
+<!--    <button onclick="myFunction()">Try it</button>-->
+<!--    <script>-->
+<!--        function myFunction() {-->
+<!--            var myWindow = window.open("newsDetail.jsp", "", "width=700,height=800");-->
+<!--        }-->
+<!--    </script>-->
+
 
     <div id="about" data-scroll-index="1" class="section wb" style="float: none">
         <div class="container">
@@ -58,7 +72,7 @@
 
                         <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus bibendum. Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed vitae rutrum neque. Ut id erat sit amet libero bibendum aliquam. Donec ac egestas libero, eu bibendum risus. Phasellus et congue justo. </p>
 
-                        <a href="#services" data-scroll class="btn btn-light btn-radius btn-brd grd1">Learn More</a>
+                        <a href="newsDetail.jsp" data-scroll class="btn btn-light btn-radius btn-brd grd1">Learn More</a>
                     </div><!-- end messagebox -->
                 </div><!-- end col -->
 
@@ -190,73 +204,30 @@
                 <p class="lead">Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus.<br> Sed a tellus quis mi rhoncus dignissim.</p>
             </div><!-- end title -->
 			
-			<div class="gallery-menu row">
-				<div class="col-md-12">
-					<div class="button-group filter-button-group text-center">
-						<button class="active" data-filter="*">All</button>
-						<button data-filter=".gal_a">Meeting</button>
-						<button data-filter=".gal_b">Event</button>
-						<button data-filter=".gal_c">Economic</button>
-						<button data-filter=".gal_d">Education</button>
-					</div>
-				</div>
-			</div>
+<!--			<div class="gallery-menu row">-->
+<!--				<div class="col-md-12">-->
+<!--					<div class="button-group filter-button-group text-center">-->
+<!--						<button class="active" data-filter="*">All</button>-->
+<!--						<button data-filter=".gal_a">Meeting</button>-->
+<!--						<button data-filter=".gal_b">Event</button>-->
+<!--						<button data-filter=".gal_c">Economic</button>-->
+<!--						<button data-filter=".gal_d">Education</button>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
 			
 			<div class="gallery-list row">
 
+                #foreach($newsPhoto in $newsPhoto)
 				<div class="col-md-4 col-sm-6 gallery-grid gal_a gal_b">
 					<div class="gallery-single fix">
-						<img src="/uploads/gallery_img-01.jpg" class="img-responsive" alt="Image">
+						<img src="/uploads/${newsPhoto.photo_name}" class="img-responsive" alt="Image">
 						<div class="img-overlay">
-							<a href="/uploads/gallery_img-01.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+							<a href="/uploads/${newsPhoto.photo_name}" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
 						</div>
 					</div>
 				</div>
-
-				<div class="col-md-4 col-sm-6 gallery-grid gal_c gal_b">
-					<div class="gallery-single fix">
-						<img src="/uploads/gallery_img-02.jpg" class="img-responsive" alt="Image">
-						<div class="img-overlay">
-							<a href="/uploads/gallery_img-02.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-4 col-sm-6 gallery-grid gal_a gal_c">
-					<div class="gallery-single fix">
-						<img src="/uploads/gallery_img-03.jpg" class="img-responsive" alt="Image">
-						<div class="img-overlay">
-							<a href="/uploads/gallery_img-03.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-4 col-sm-6 gallery-grid gal_b gal_a">
-					<div class="gallery-single fix">
-						<img src="/uploads/gallery_img-04.jpg" class="img-responsive" alt="Image">
-						<div class="img-overlay">
-							<a href="/uploads/gallery_img-04.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-4 col-sm-6 gallery-grid gal_a gal_c">
-					<div class="gallery-single fix">
-						<img src="/uploads/gallery_img-05.jpg" class="img-responsive" alt="Image">
-						<div class="img-overlay">
-							<a href="/uploads/gallery_img-05.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-4 col-sm-6 gallery-grid gal_c gal_d">
-					<div class="gallery-single fix">
-						<img src="/uploads/gallery_img-06.jpg" class="img-responsive" alt="Image">
-						<div class="img-overlay">
-							<a href="/uploads/gallery_img-06.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-						</div>
-					</div>
-				</div>
+                #end
 			</div>
 			</div>
 		</div>
@@ -348,45 +319,32 @@
                 <div class="col-md-12">
                     <div class="contact_form">
                         <div id="message"></div>
-                        <form id="contactform" class="row" action="contact.php" name="contactform" method="post">
-                            <fieldset class="row-fluid">
+                        <form id="form1" class="row" method="post">
+                            <div class="row-fluid">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <input type="text" name="first_name" id="first_name" class="form-control" placeholder="First Name">
+                                    <input type="text" name="first_name" class="form-control" placeholder="First Name">
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Last Name">
+                                    <input type="text" name="last_name" class="form-control" placeholder="Last Name">
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <input type="email" name="email" id="email" class="form-control" placeholder="Your Email">
+                                    <input type="email" name="email" class="form-control" placeholder="Your Email">
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <input type="text" name="phone" id="phone" class="form-control" placeholder="Your Phone">
+                                    <input type="text" name="phone" class="form-control" placeholder="Your Phone">
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <label class="sr-only">Select Service</label>
-                                    <select name="select_service" id="select_service" class="selectpicker form-control" data-style="btn-white">
-                                        <option value="12">Donate For?</option>
-                                        <option value="Political Parties">Political Parties</option>
-                                        <option value="For Politician">For Politician</option>
-                                        <option value="Others">Others</option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <label class="sr-only">What is max price?</label>
-                                    <select name="select_price" id="select_price" class="selectpicker form-control" data-style="btn-white">
-                                        <option value="$100 - $2000">$10 - $100</option>
-                                        <option value="$2000 - $4000">$100 - $1000</option>
-                                        <option value="$4000 - $10000">$1000 - $10000</option>
-                                    </select>
+                                    <input type="text" name="title" class="form-control" placeholder="Title">
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <textarea class="form-control" name="comments" id="comments" rows="6" placeholder="Why you are donate us?"></textarea>
+                                    <textarea class="form-control" name="subject" rows="6" placeholder="Why you are contacting us?"></textarea>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center">
-                                    <button type="submit" value="SEND" id="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block">Pay Now via PayPal</button>
+                                    <button type="submit" value="Save" class="btn btn-light btn-radius btn-brd grd1 btn-block">Send</button>
                                 </div>
-                            </fieldset>
+                            </div>
                         </form>
+                        ${form_script}
                     </div>
                 </div><!-- end col -->
             </div><!-- end row -->

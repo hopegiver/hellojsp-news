@@ -15,6 +15,8 @@ if(id == 0) { m.jsError("Primary Key is required"); return; }
 DataSet info = menu.find("id = " + id);
 if(!info.next()) { m.jsError("No Data"); return; }
 
+DataSet parent = menu.find("status != -1 AND parent_id = 0 ");
+
 //Step4
 f.addElement("module", info.s("module"), "title:'module'");
 f.addElement("menu_name", info.s("menu_name"), "title:'menu_name', required:true");
@@ -43,10 +45,12 @@ if(m.isPost() && f.validate()) {
 	return;
 }
 
+
 //Step6
 p.setLayout("blog");
 p.setBody("admin/menu/update");
 p.setVar("info", info);
+p.setVar("parent", parent);
 p.setVar("form_script", f.getScript());
 p.print();
 
