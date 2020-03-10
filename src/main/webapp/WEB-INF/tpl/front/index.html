@@ -5,7 +5,7 @@
 </head>
 <body class="politics_version">
 
-    <div class="topbar text-center hidden-xs">
+    <div class="topbar text-center hidden-xs" style="background-color: #fff">
         <p>This site uses cookies</p>
     </div>
 
@@ -52,12 +52,12 @@
         #end
     </div> <!-- /#theme-main-banner -->
 
-<!--    <button onclick="myFunction()">Try it</button>-->
-<!--    <script>-->
-<!--        function myFunction() {-->
-<!--            var myWindow = window.open("newsDetail.jsp", "", "width=700,height=800");-->
-<!--        }-->
-<!--    </script>-->
+    <script>
+        var url = "${latestNews.video_url}";
+        function myFunction() {
+            var myWindow = window.open(url, "", "width=700,height=800");
+        }
+    </script>
 
 
     <div id="news" data-scroll-index="1" class="section wb" style="float: none">
@@ -71,7 +71,7 @@
 
                         <p> ${latestNews.content} </p>
 
-                        <a href="newsDetail.jsp" data-scroll class="btn btn-light btn-radius btn-brd grd1">Learn More</a>
+                        <button onclick="myFunction()" data-scroll class="btn btn-light btn-radius btn-brd grd1">Learn More</button>
                     </div><!-- end messagebox -->
                 </div><!-- end col -->
 
@@ -159,7 +159,6 @@
         <div class="container">
             <div class="section-title text-center">
                 <h3>Gallery</h3>
-                <p class="lead">Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus.<br> Sed a tellus quis mi rhoncus dignissim.</p>
             </div><!-- end title -->
 
             <!--			<div class="gallery-menu row">-->
@@ -226,7 +225,6 @@
         <div class="container">
             <div class="section-title text-center">
                 <h3>Contact</h3>
-                <p class="lead">Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus.<br> Sed a tellus quis mi rhoncus dignissim.</p>
             </div><!-- end title -->
 
             <div class="row">
@@ -265,7 +263,6 @@
         </div><!-- end container -->
     </div><!-- end section -->
     <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
-
 
     #parse("layout/footer.html")
 
