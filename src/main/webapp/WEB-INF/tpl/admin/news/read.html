@@ -8,6 +8,14 @@
 	</div>
 	<div class="panel-body">
 		<dl class="dl-horizontal">
+			<dt>Latest</dt>
+			<dd>
+				#if(${info.latest} == "Y")
+					Yes
+				#else
+					No
+				#end
+			</dd>
 			<dt>Type</dt>
 			<dd>${info.type}</dd>
 			<dt>Subject</dt>

@@ -15,6 +15,7 @@ DataSet info = news.find("id = " + id);
 if(!info.next()) { m.jsError("No Data"); return; }
 
 //Step4
+f.addElement("latest", info.s("latest"), "title:'latest', required:true");
 f.addElement("type", info.s("type"), "title:'type', required:true");
 f.addElement("subject", info.s("subject"), "title:'subject', required:true");
 f.addElement("content", info.s("content"), "title:'content', required:true");
@@ -24,10 +25,13 @@ f.addElement("video_url", info.s("video_url"), "title:'video_url'");
 //Step5
 if(m.isPost() && f.validate()) {
 
+	news.item("latest", f.get("latest"));
 	news.item("type", f.get("type"));
 	news.item("subject", f.get("subject"));
 	news.item("content", f.get("content"));
+	news.item("video_url", f.get("video_url"));
 	news.item("mod_date", m.time("yyyyMMddHHmmss"));
+
 
 	if("Y".equals(f.get("photo_name_del"))) {
 		news.item("photo_name", "");

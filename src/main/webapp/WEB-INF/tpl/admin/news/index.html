@@ -18,6 +18,7 @@
 	<table class="table table-bordered table-striped">
 	<tr>
 		<th>ID</th>
+		<th>Latest</th>
 		<th>Type</th>
 		<th>Subject</th>
 		<th>Content</th>
@@ -28,6 +29,13 @@
 	<!--#foreach($item in $list)-->
 	<tr>
 		<td><a href="read.jsp?id=${item.id}">${item.id}</a></td>
+		<td>
+			#if(${item.latest} == "Y")
+				Yes
+			#else
+				No
+			#end
+		</td>
 		<td>${item.type}</td>
 		<td><a href="read.jsp?id=${item.id}">${item.subject}</a></td>
 		<td>${item.content}</td>

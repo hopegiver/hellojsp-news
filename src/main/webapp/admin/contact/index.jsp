@@ -14,7 +14,7 @@
         lm.setTable("tb_contact a");
         lm.setFields("a.*");
         lm.addWhere("a.status != -1");
-        lm.addSearch("a.first_name, a.subject, a.title, a.last_name, a.email, a.phone", f.get("s_keyword"), "LIKE");
+        lm.addSearch("a.first_name, a.subject, a.content, a.last_name, a.email, a.phone", f.get("s_keyword"), "LIKE");
         lm.setOrderBy("a.id DESC");
 
         //Step3

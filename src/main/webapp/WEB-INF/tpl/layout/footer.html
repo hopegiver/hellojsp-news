@@ -1,19 +1,21 @@
+
 <div class="copyrights">
     <div class="container">
         <div class="footer-distributed">
             <div class="footer-left">
                 <p class="footer-links">
-                    <a href="#">Home</a>
-                    <a href="#">Blog</a>
-                    <a href="#">Pricing</a>
-                    <a href="#">About</a>
-                    <a href="#">Faq</a>
-                    <a href="#">Contact</a>
+                    #foreach($menuInfo in $menuInfo)
+                        #if(${menuInfo.parent_id} == 0)
+                            <a data-scroll-nav="${menuInfo.module_id}" href="#${menuInfo.module}" >${menuInfo.menu_name}</a>
+                        #end
+                    #end
                 </p>
-                <p class="footer-company-name">All Rights Reserved. &copy; 2018 <a href="#">Elpolitic</a> Design By :
+                <p class="footer-company-name">All Rights Reserved. &copy; 2018 <a href="#">${info.site_name}</a> Design By :
                     <a href="https://html.design/">html design</a></p>
+                <span class="footer-company-name">Email: ${info.email}</span>
+                <span class="footer-company-name">Telephone: ${info.phone}</span>
+                <p class="footer-company-name">Address: ${info.address}</p>
             </div>
-
             <div class="footer-right">
                 <form method="get" action="#">
                     <input placeholder="Subscribe our newsletter.." name="search">

@@ -7,6 +7,7 @@
 	NewsDao news = new NewsDao();
 
 //Step2
+	f.addElement("latest", null, "title:'latest', required:true");
 	f.addElement("type", null, "title:'type', required:true");
 	f.addElement("subject", null, "title:'subject', required:true");
 	f.addElement("content", null, "title:'content', required:true");
@@ -15,6 +16,7 @@
 //Step3
 if(m.isPost() && f.validate()) {
 
+	news.item("latest", f.get("latest"));
 	news.item("type", f.get("type"));
 	news.item("subject", f.get("subject"));
 	news.item("content", f.get("content"));
