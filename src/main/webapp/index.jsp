@@ -3,9 +3,6 @@
 	DataSet menuInfo = menu.find("status != -1", "id, menu_name, module, module_id, parent_id, sort", "sort");
 	if(!menuInfo.next()) { m.jsError("No Data"); return; }
 
-//        DataSet subMenu = menu.find("status != -1 AND parent_id != 0", "menu_name, module, module_id, sort, parent_id", "sort");
-//        if(!subMenu.next()) { m.jsError("No Data"); return; }
-
 	DataSet bannerList = banner.find("status != -1", "title, content, photo_name");
 	if(!bannerList.next()) { m.jsError("No Data"); return; }
 
@@ -28,7 +25,7 @@
 	DataSet mediaNews = news.find("status != -1 AND video_url != ''", " * ", "id DESC", 3);
 	if(!mediaNews.next()) { m.jsError("No data"); return; }
 
-	DataSet newsPhoto = news.find("status != -1 AND type = 'photo'", "photo_name");
+	DataSet newsPhoto = news.find("status != -1 AND type = 'photo'", "id ,photo_name", "id DESC", 6);
 	if(!newsPhoto.next()) { m.jsError("No data"); return; }
 
 	DataSet blogList = blog.find("status != -1", "subject, content, reg_date, att_file_name", "reg_date DESC", 3);

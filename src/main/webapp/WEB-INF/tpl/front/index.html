@@ -19,7 +19,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.jsp"><img src="/images/logos/logo.png" alt="image"></a>
+                    <a class="navbar-brand" href="/"><img src="/images/logos/logo.png" alt="image"></a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
@@ -45,20 +45,12 @@
                 <div class="container">
                     <h1 class="wow fadeInUp animated">${bannerList.title}</h1>
                     <p class="wow fadeInUp animated" data-wow-delay="0.2s">${bannerList.content}</p>
-                    <a data-scroll href="#" class="btn btn-light btn-radius btn-brd grd1">Contact</a>
-                </div> <!-- /.container -->
-            </div> <!-- /.camera_caption -->
+                    <a data-scroll-nav="7" href="#" class="btn btn-light btn-radius btn-brd grd1">Contact</a>
+                </div>
+            </div>
         </div>
         #end
-    </div> <!-- /#theme-main-banner -->
-
-    <script>
-        var url = "${latestNews.video_url}";
-        function myFunction() {
-            var myWindow = window.open(url, "", "width=700,height=800");
-        }
-    </script>
-
+    </div>
 
     <div id="news" data-scroll-index="1" class="section wb" style="float: none">
         <div class="container">
@@ -71,24 +63,24 @@
 
                         <p> ${latestNews.short_news} </p>
 
-                        <a href="/front/detail.jsp?id=${latestNews.id}" data-scroll class="btn btn-light btn-radius btn-brd grd1">Learn More</a>
-                    </div><!-- end messagebox -->
-                </div><!-- end col -->
+                        <button onclick="myFunction('/front/detail.jsp?id=${latestNews.id}')" data-scroll class="btn btn-light btn-radius btn-brd grd1">Learn More</button>
+                    </div>
+                </div>
 
                 <div class="col-md-6">
                     <div class="post-media wow fadeIn">
                         <img src="/uploads/${latestNews.photo_name}" alt="" class="img-responsive img-rounded">
-                        <a href="${latestNews.video_url}" data-rel="prettyPhoto[gal]" class="playbutton"><i class="flaticon-play-button"></i></a>
-                    </div><!-- end media -->
-                </div><!-- end col -->
-            </div><!-- end row -->
+                        <a onclick="myFunction('${latestNews.video_url}')" class="playbutton"><i class="flaticon-play-button"></i></a>
+                    </div>
+                </div>
+            </div>
 
             <div class="row text-center" style="margin-top: 60px">
                 #foreach($photoNews in $photoNews)
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="service-widget">
                         <div class="post-media_pp wow fadeIn">
-                            <a href="/uploads/${photoNews.photo_name}" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+                            <a onclick="myFunction('/front/detail.jsp?id=${photoNews.id}')" data-scroll class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
                             <img src="/uploads/${photoNews.photo_name}" alt="" class="img-responsive">
                             <div class="hover-up">
                                 <h3>${photoNews.subject}</h3>
@@ -96,11 +88,11 @@
                             </div>
                         </div>
 
-                    </div><!-- end service -->
+                    </div>
                 </div>
                 #end
-            </div><!-- end row -->
-        </div><!-- end container -->
+            </div>
+        </div>
 
     <div class="section nopad">
         <img src="uploads/" alt="" class="img-responsive">
@@ -109,7 +101,7 @@
         <div class="container">
             <div class="section-title text-left">
                 <h3>Old News</h3>
-            </div><!-- end title -->
+            </div>
 
             <div class="row">
 				<div class="col-md-5">
@@ -117,26 +109,26 @@
                         <img src="/uploads/${oldPhotoNewsFirst.photo_name}" alt="" class="img-responsive img-rounded">
                         <h4>"${oldPhotoNewsFirst.subject}”</h4>
                         <p>${oldPhotoNewsFirst.short_news}</p>
-                    </div><!-- end issue -->
-                </div><!-- end col -->
+                    </div>
+                </div>
                 <div class="col-md-7">
                     #foreach($oldPhotoNews in $oldPhotoNews)
                     <div class="issuse-wrap clearfix">
                         <img src="/uploads/${oldPhotoNews.photo_name}" alt="" class="img-responsive img-rounded alignleft">
                         <h4>${oldPhotoNews.subject}</h4>
                         <p>${oldPhotoNews.short_news}</p>
-                    </div><!-- end issue -->
+                    </div>
                     #end
-                </div><!-- end col -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </div><!-- end section -->
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div id="media" data-scroll-index="5" class="section wb" style="padding-top: 0">
         <div class="container">
             <div class="section-title text-center">
                 <h3>Multimedia News</h3>
-            </div><!-- end title -->
+            </div>
 
             <div class="row">
                 #foreach($item in $mediaNews)
@@ -144,22 +136,22 @@
                     <div class="issuse-wrap2 clearfix">
                         <div class="post-media wow fadeIn">
                             <img src="/uploads/${item.photo_name}" alt="" class="img-responsive img-rounded">
-                            <a href="${item.video_url}" data-rel="prettyPhoto[gal]" class="playbutton"><i class="flaticon-play-button"></i></a>
-                        </div><!-- end media -->
+                            <a onclick="myFunction('${item.video_url}')" class="playbutton"><i class="flaticon-play-button"></i></a>
+                        </div>
                         <h4>"${item.subject}”</h4>
                         <p>${item.short_news}</p>
-                    </div><!-- end issue -->
-                </div><!-- end col -->
+                    </div>
+                </div>
                 #end
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </div><!-- end section -->
+            </div>
+        </div>
+    </div>
 
     <div id="gallery" data-scroll-index="4" class="section lb">
         <div class="container">
             <div class="section-title text-center">
                 <h3>Gallery</h3>
-            </div><!-- end title -->
+            </div>
 
             <!--			<div class="gallery-menu row">-->
             <!--				<div class="col-md-12">-->
@@ -180,7 +172,7 @@
                     <div class="gallery-single fix">
                         <img src="/uploads/${newsPhoto.photo_name}" class="img-responsive" alt="Image">
                         <div class="img-overlay">
-                            <a href="/uploads/${newsPhoto.photo_name}" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+                            <a onclick="myFunction('/front/detail.jsp?id=${newsPhoto.id}')" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
                         </div>
                     </div>
                 </div>
@@ -195,7 +187,7 @@
 			<div class="section-title text-center">
 				<span>Latest news</span>
                 <h3>From Blog</h3>
-            </div><!-- end title -->
+            </div>
 			<div class="row">
                 #foreach($blogList in $blogList)
 				<div class="col-md-4 col-sm-6 col-lg-4">
@@ -224,8 +216,8 @@
     <div id="donate" data-scroll-index="7" class="section db">
         <div class="container">
             <div class="section-title text-center">
-                <h3>Contact</h3>
-            </div><!-- end title -->
+                <h3>Comment</h3>
+            </div>
 
             <div class="row">
                 <div class="col-md-12">
@@ -258,13 +250,16 @@
                         </form>
                         ${form_script}
                     </div>
-                </div><!-- end col -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </div><!-- end section -->
+                </div>
+            </div>
+        </div>
+    </div>
     <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
-
     #parse("layout/footer.html")
-
 </body>
+<script>
+    function myFunction(url) {
+        var myWindow = window.open(url, "", "width=700,height=500");
+    }
+</script>
 </html>

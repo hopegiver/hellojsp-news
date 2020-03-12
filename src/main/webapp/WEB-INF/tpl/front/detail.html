@@ -5,32 +5,46 @@
 </head>
 <body class="politics_version">
 
-<div id="news" data-scroll-index="1" class="section wb" style="float: none">
+<div id="news" data-scroll-index="1" class="section wb" style="float: none; padding-top: 30px; padding-bottom: 0">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <div class="message-box">
                     <h4>Welcome to  ELPolitic</h4>
-                    <h2 style="text-align: center">Latest News</h2>
-                    <blockquote class="lead">${info.subject}</blockquote>
+                    #if(${item.latest} == "Y")
+                        <h2 style="text-align: center">Latest News</h2>
+                    #else
+                        <h2 style="text-align: center">News</h2>
+                    #end
 
-                    <p> ${info.content} </p>
+                    <div style="display: flex">
+                        <blockquote class="lead" style="flex-grow: 8; text-transform: uppercase">${item.subject}
+                        </blockquote>
+                        <span style="flex-grow: 2; padding: 11px; text-align: end;">Date : <b>${item.reg_date}</b></span>
+                    </div>
 
-                    <button onclick="myFunction()" data-scroll class="btn btn-light btn-radius btn-brd grd1">Learn More</button>
+
+                    <p> ${item.short_news} </p>
                 </div>
             </div>
-
             <div class="col-md-6">
                 <div class="post-media wow fadeIn">
-                    <img src="/uploads/${info.photo_name}" alt="" class="img-responsive img-rounded">
-                    <a href="${info.video_url}" data-rel="prettyPhoto[gal]" class="playbutton"><i class="flaticon-play-button"></i></a>
+                    <img src="/uploads/${item.photo_name}" alt="" class="img-responsive img-rounded">
+                    #if(${item.video_url} != "" )
+                    <a href="${item.video_url}" data-rel="prettyPhoto[gal]" class="playbutton"><i class="flaticon-play-button"></i></a>
+                    #end
+                </div>
+            </div>
+        </div>
+        <div class="row" style="padding-top: 40px; padding-bottom: 30px">
+            <div class="col-md-10">
+                <div class="">
+                    <p> ${item.long_news} </p>
                 </div>
             </div>
         </div>
     </div>
+    #parse("layout/footer.html")
 </div>
-
-
-
 </body>
 </html>
