@@ -21,6 +21,7 @@
 
 	DataSet latestNews = news.find("status != -1 AND latest = 'Y'", " * ", "id DESC", 1);
 	if(!latestNews.next()) { m.jsError("No data"); return; }
+	latestNews.put("reg_date", m.time("MM-dd HH:mm"));
 
 	DataSet mediaNews = news.find("status != -1 AND video_url != ''", " * ", "id DESC", 3);
 	if(!mediaNews.next()) { m.jsError("No data"); return; }
