@@ -18,7 +18,8 @@ if(!info.next()) { m.jsError("No Data"); return; }
 f.addElement("latest", info.s("latest"), "title:'latest', required:true");
 f.addElement("type", info.s("type"), "title:'type', required:true");
 f.addElement("subject", info.s("subject"), "title:'subject', required:true");
-f.addElement("content", info.s("content"), "title:'content', required:true");
+f.addElement("short_news", info.s("short_news"), "title:'short_news', required:true");
+f.addElement("long_news", info.s("long_news"), "title:'long_news', required:true");
 f.addElement("photo_name", info.s("photo_name"), "title:'photo_name'");
 f.addElement("video_url", info.s("video_url"), "title:'video_url'");
 
@@ -28,7 +29,8 @@ if(m.isPost() && f.validate()) {
 	news.item("latest", f.get("latest"));
 	news.item("type", f.get("type"));
 	news.item("subject", f.get("subject"));
-	news.item("content", f.get("content"));
+	news.item("short_news", f.get("short_news"));
+	news.item("long_news", f.get("long_news"));
 	news.item("video_url", f.get("video_url"));
 	news.item("mod_date", m.time("yyyyMMddHHmmss"));
 

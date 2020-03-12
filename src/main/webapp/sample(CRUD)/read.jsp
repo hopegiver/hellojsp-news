@@ -16,7 +16,7 @@ info.put("content", m.htt(info.s("content")));
 info.put("reg_date", m.time("yyyy-MM-dd HH:mm", info.s("reg_date")));
 
 //Step5
-p.setLayout("blog");
+p.setLayout("admin");
 p.setBody("sample/read");
 p.setVar("info", info);
 p.print();

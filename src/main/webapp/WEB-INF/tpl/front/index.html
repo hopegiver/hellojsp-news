@@ -69,9 +69,9 @@
                         <h2 style="text-align: center">Latest News</h2>
                         <blockquote class="lead">${latestNews.subject}</blockquote>
 
-                        <p> ${latestNews.content} </p>
+                        <p> ${latestNews.short_news} </p>
 
-                        <button onclick="myFunction()" data-scroll class="btn btn-light btn-radius btn-brd grd1">Learn More</button>
+                        <a href="/front/detail.jsp?id=${latestNews.id}" data-scroll class="btn btn-light btn-radius btn-brd grd1">Learn More</a>
                     </div><!-- end messagebox -->
                 </div><!-- end col -->
 
@@ -92,7 +92,7 @@
                             <img src="/uploads/${photoNews.photo_name}" alt="" class="img-responsive">
                             <div class="hover-up">
                                 <h3>${photoNews.subject}</h3>
-                                <p>${photoNews.content}</p>
+                                <p>${photoNews.short_news}</p>
                             </div>
                         </div>
 
@@ -116,7 +116,7 @@
                     <div class="issuse-wrap2 clearfix">
                         <img src="/uploads/${oldPhotoNewsFirst.photo_name}" alt="" class="img-responsive img-rounded">
                         <h4>"${oldPhotoNewsFirst.subject}”</h4>
-                        <p>${oldPhotoNewsFirst.content}</p>
+                        <p>${oldPhotoNewsFirst.short_news}</p>
                     </div><!-- end issue -->
                 </div><!-- end col -->
                 <div class="col-md-7">
@@ -124,7 +124,7 @@
                     <div class="issuse-wrap clearfix">
                         <img src="/uploads/${oldPhotoNews.photo_name}" alt="" class="img-responsive img-rounded alignleft">
                         <h4>${oldPhotoNews.subject}</h4>
-                        <p>${oldPhotoNews.content}</p>
+                        <p>${oldPhotoNews.short_news}</p>
                     </div><!-- end issue -->
                     #end
                 </div><!-- end col -->
@@ -147,7 +147,7 @@
                             <a href="${item.video_url}" data-rel="prettyPhoto[gal]" class="playbutton"><i class="flaticon-play-button"></i></a>
                         </div><!-- end media -->
                         <h4>"${item.subject}”</h4>
-                        <p>${item.content}</p>
+                        <p>${item.short_news}</p>
                     </div><!-- end issue -->
                 </div><!-- end col -->
                 #end

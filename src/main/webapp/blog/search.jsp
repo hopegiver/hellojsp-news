@@ -9,7 +9,7 @@ lm.setOrderBy("id DESC");
 
 DataSet posts = lm.getDataSet();
 
-p.setLayout("blog");
+p.setLayout("admin");
 p.setBody("example/search");
 p.setVar("posts", posts);
 p.print();

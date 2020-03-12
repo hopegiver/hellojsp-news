@@ -6,7 +6,7 @@ DB db = new DB();
 DataSet posts = db.select("Blog.selectAll", null);
 DataSet post1 = db.select("Blog.selectOne", null);
 
-p.setLayout("blog");
+p.setLayout("admin");
 p.setBody("example/blog");
 p.setVar("posts", posts);
 p.setVar("post1", post1);

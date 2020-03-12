@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    #parse("layout/header.html")
+</head>
+<body class="politics_version">
+
+<div id="news" data-scroll-index="1" class="section wb" style="float: none">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="message-box">
+                    <h4>Welcome to  ELPolitic</h4>
+                    <h2 style="text-align: center">Latest News</h2>
+                    <blockquote class="lead">${info.subject}</blockquote>
+
+                    <p> ${info.content} </p>
+
+                    <button onclick="myFunction()" data-scroll class="btn btn-light btn-radius btn-brd grd1">Learn More</button>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="post-media wow fadeIn">
+                    <img src="/uploads/${info.photo_name}" alt="" class="img-responsive img-rounded">
+                    <a href="${info.video_url}" data-rel="prettyPhoto[gal]" class="playbutton"><i class="flaticon-play-button"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
