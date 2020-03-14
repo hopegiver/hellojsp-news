@@ -36,7 +36,7 @@ if(m.isPost() && f.validate()) {
 }
 
 //Step6
-p.setLayout("blog");
+p.setLayout("admin");
 p.setBody("admin/banner/delete");
 p.setVar("info", info);
 p.setVar("form_script", f.getScript());

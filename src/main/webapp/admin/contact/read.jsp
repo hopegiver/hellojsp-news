@@ -18,7 +18,7 @@ if(!info.next()) { m.jsError("No Data"); return; }
 info.put("reg_date", m.time("yyyy-MM-dd HH:mm", info.s("reg_date")));
 
 //Step5
-p.setLayout("blog");
+p.setLayout("admin");
 p.setBody("admin/contact/read");
 p.setVar("info", info);
 p.print();

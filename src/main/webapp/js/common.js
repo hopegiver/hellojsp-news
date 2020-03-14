@@ -364,40 +364,40 @@ function validate(el) {
 	return true;
 }
 
-function SetElementValue(element, v, sep) {
-	if(!element) return false;
-	switch(element.type) {
-		case 'text':
-		case 'password':
-		case 'hidden':
-			element.value = v;
-			break;
-		case 'textarea':
-			element.text = v;
-			break;
-		case 'checkbox':
-			if(element.value == v) element.checked = true;
-			break;
-		case 'select-one':
-			for(var i=0; i<element.options.length; i++) if(element.options[i].value == v) element.options[i].selected = true;
-			break;
-		default:
-			if(sep) {
-				var val = v.split(sep);
-				for(var i=0; i<element.length; i++) {
-					for(var j=0; j<val.length; j++) {
-						if(element[i].value == val[j])  element[i].checked = true;
-					}
-				}
-			}
-			else {
-				for(var i=0; i<element.length; i++) {
-					if(element[i].value == v) element[i].checked = true;
-				}
-			}
-			break;
-	}
-}
+// function SetElementValue(element, v, sep) {
+// 	if(!element) return false;
+// 	switch(element.type) {
+// 		case 'text':
+// 		case 'password':
+// 		case 'hidden':
+// 			element.value = v;
+// 			break;
+// 		case 'textarea':
+// 			element.text = v;
+// 			break;
+// 		case 'checkbox':
+// 			if(element.value == v) element.checked = true;
+// 			break;
+// 		case 'select-one':
+// 			for(var i=0; i<element.options.length; i++) if(element.options[i].value == v) element.options[i].selected = true;
+// 			break;
+// 		default:
+// 			if(sep) {
+// 				var val = v.split(sep);
+// 				for(var i=0; i<element.length; i++) {
+// 					for(var j=0; j<val.length; j++) {
+// 						if(element[i].value == val[j])  element[i].checked = true;
+// 					}
+// 				}
+// 			}
+// 			else {
+// 				for(var i=0; i<element.length; i++) {
+// 					if(element[i].value == v) element[i].checked = true;
+// 				}
+// 			}
+// 			break;
+// 	}
+// }
 
 function SetFormValue(f, n, v, sep) {
 	var f = document.forms[f];

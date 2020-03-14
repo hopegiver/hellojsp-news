@@ -1,7 +1,6 @@
 <%@ page import="javax.xml.crypto.Data" %>
 <%@ page contentType="text/html; charset=utf-8" %><%@ include file="/init.jsp" %><%
 UserDao user = new UserDao();
-	m.p("USER_ID : " + userId);
 
 	f.addElement("login_id", null, "title:'login_id', required:'Y'");
 	f.addElement("passwd", null, "title:'password', required:'Y'");
@@ -18,7 +17,7 @@ UserDao user = new UserDao();
 			auth.save();
 			
 			m.jsAlert("Login success");
-			m.jsReplace("menu/index.jsp");
+			m.jsReplace("dashboard.jsp");
 		} else {
 			m.jsError("id or password is not correct.");
 			auth.destroy();
@@ -26,11 +25,9 @@ UserDao user = new UserDao();
 		return;
 		
 	}
-
 	p.setBody("admin/login");
 	p.setVar("form_script", f.getScript());
 	p.print();
 
 %>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+

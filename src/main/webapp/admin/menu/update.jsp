@@ -47,7 +47,7 @@ if(m.isPost() && f.validate()) {
 
 
 //Step6
-p.setLayout("blog");
+p.setLayout("admin");
 p.setBody("admin/menu/update");
 p.setVar("info", info);
 p.setVar("parent", parent);

@@ -20,7 +20,7 @@ info.put("module_id", m.htt(info.s("module_id")));
 info.put("reg_date", m.time("yyyy-MM-dd HH:mm", info.s("reg_date")));
 
 //Step5
-p.setLayout("blog");
+p.setLayout("admin");
 p.setBody("admin/menu/read");
 p.setVar("info", info);
 p.print();

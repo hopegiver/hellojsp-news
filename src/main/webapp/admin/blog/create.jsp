@@ -38,7 +38,7 @@ if(m.isPost() && f.validate()) {
 
 //Step4
 p.setDebug(out);
-p.setLayout("blog");
+p.setLayout("admin");
 p.setBody("admin/blog/create");
 p.setVar("form_script", f.getScript());
 p.print();

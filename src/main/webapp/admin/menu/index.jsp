@@ -27,7 +27,7 @@
 
         //Step4
         //    p.setDebug(out);
-        p.setLayout("blog");
+        p.setLayout("admin");
         p.setBody("admin/menu/index");
         p.setVar("list", list);
         p.setVar("parent", parent);

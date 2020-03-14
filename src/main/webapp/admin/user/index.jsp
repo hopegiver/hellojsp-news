@@ -25,7 +25,7 @@
 
         //Step4
 
-        p.setLayout("blog");
+        p.setLayout("admin");
         p.setBody("admin/user/index");
 
         p.setVar("list", list);
