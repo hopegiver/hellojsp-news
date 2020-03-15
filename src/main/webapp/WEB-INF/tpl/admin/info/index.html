@@ -1,3 +1,63 @@
+<div class="page-content container">
+	<div class="page-header">
+		<h1 class="page-title text-primary-d2">
+			Site info
+			<small class="page-info text-secondary-d2">
+				<i class="fa fa-angle-double-right text-80"></i>
+				Admin editable site info list
+			</small>
+		</h1>
+	</div>
+	<div class="row" style="margin-bottom: 30px;">
+		<div class="col-6" style="text-align: left;">
+			<a href="create.jsp" class="btn btn-small btn-primary">New</a>
+		</div>
+		<div class="col-6" style="text-align: right">
+			<form name="form1" method="get" class="form-inline">
+				<input type="text" name="s_keyword" class="form-control">
+				<input class="btn btn-default" type="submit" value="Search">
+			</form>
+			${form_script}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-10">
+			<table id="simple-table" class="table table-bordered table-bordered-x table-hover text-dark-m2">
+				<tr>
+					<th>ID</th>
+					<th>Site Name</th>
+					<th>Email</th>
+					<th>Phone</th>
+					<th>Telephone</th>
+					<th>Address</th>
+					<th>Reg Date</th>
+					<th>Manage</th>
+				</tr>
+				<!--#foreach($item in $list)-->
+				<tr>
+					<td><a href="read.jsp?id=${item.id}">${item.id}</a></td>
+					<td><a href="read.jsp?id=${item.id}">${item.site_name}</a></td>
+					<td>${item.email}</td>
+					<td><a href="read.jsp?id=${item.id}">${item.phone}</a></td>
+					<td>${item.telephone}</td>
+					<td>${item.address}</td>
+					<td>${item.reg_date}</td>
+					<td>
+						<a href="read.jsp?id=${item.id}" class="btn btn-sm btn-outline-success">View</a>
+						<a href="update.jsp?id=${item.id}" class="btn btn-sm btn-outline-primary">Edit</a>
+						<a href="delete.jsp?id=${item.id}" class="btn btn-sm btn-outline-danger">Delete</a>
+					</td>
+				</tr>
+				<!--#end-->
+			</table>
+			<div class="panel-body text-center">
+				${pagebar}
+			</div>
+		</div>
+	</div>
+	<hr class="border-double my-4 brc-secondary-l2" />
+</div>
+
 
 <div class="page-header">
 	<h1>Site info</h1>
@@ -15,34 +75,5 @@
 			<a href="create.jsp" class="btn btn-small btn-primary">New</a>
 		</div>
 	</div>
-	<table class="table table-bordered table-striped">
-	<tr>
-		<th>ID</th>
-		<th>Site Name</th>
-		<th>Email</th>
-		<th>Phone</th>
-		<th>Telephone</th>
-		<th>Address</th>
-		<th>Reg Date</th>
-		<th>Manage</th>
-	</tr>
-	<!--#foreach($item in $list)-->
-	<tr>
-		<td><a href="read.jsp?id=${item.id}">${item.id}</a></td>
-		<td><a href="read.jsp?id=${item.id}">${item.site_name}</a></td>
-		<td>${item.email}</td>
-		<td><a href="read.jsp?id=${item.id}">${item.phone}</a></td>
-		<td>${item.telephone}</td>
-		<td>${item.address}</td>
-		<td>${item.reg_date}</td>
-		<td>
-			<a href="update.jsp?id=${item.id}" class="label label-primary">Edit</a>
-			<a href="delete.jsp?id=${item.id}" class="label label-danger">Delete</a>
-		</td>
-	</tr>
-	<!--#end-->
-	</table>
-	<div class="panel-body text-center">
-		${pagebar}
-	</div>
+
 </div>

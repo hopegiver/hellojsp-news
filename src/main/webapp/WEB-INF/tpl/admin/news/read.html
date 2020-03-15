@@ -1,41 +1,46 @@
-<div class="page-header">
-	<h1>News</h1>
-</div>
-
-<div class="panel panel-default">
-	<div class="panel-heading">
-		<h3 class="panel-title">Article Info.</h3>
+<div class="page-content container">
+	<div class="page-header">
+		<h1 class="page-title text-primary-d2">
+			News
+			<small class="page-info text-secondary-d2">
+				<i class="fa fa-angle-double-right text-80"></i>
+				Admin editable news detail
+			</small>
+		</h1>
 	</div>
-	<div class="panel-body">
-		<dl class="dl-horizontal">
-			<dt>Latest</dt>
-			<dd>
-				#if(${info.latest} == "Y")
+	<div class="row">
+		<div class="col-9">
+			<div class="form-group row">
+				<label class=" col-md-2">Latest</label>
+				<div class="col-md-9">
+					#if(${info.latest} == "Y")
 					Yes
-				#else
+					#else
 					No
-				#end
-			</dd>
-			<dt>Type</dt>
-			<dd>${info.type}</dd>
-			<dt>Subject</dt>
-			<dd>${info.subject}</dd>
-			<dt>Description</dt>
-			<dd>${info.short_news}</dd>
-			<dt>More News</dt>
-			<dd>${info.long_news}</dd>
-			<dt>Photo</dt>
-			<dd>${info.photo_name}</dd>
-			<dt>Video URL</dt>
-			<dd>${info.video_url}</dd>
-			<dt>Date</dt>
-			<dd>${info.reg_date}</dd>
-			<dd>
-				<br>
-				<input type="button" value="Back" class="btn btn-default" onclick="history.go(-1)">
-				<a href="update.jsp?id=${info.id}" class="btn btn-primary">Edit</a>
-				<a href="delete.jsp?id=${info.id}" class="btn btn-danger">Delete</a>
-			</dd>
-		</dl>
+					#end
+				</div>
+				<label class=" col-md-2">Type: </label>
+				<div class="col-md-9">${info.type}</div>
+				<label class=" col-md-2">Subject: </label>
+				<div class="col-md-9">${info.subject}</div>
+				<label class=" col-md-2">Description: </label>
+				<div class="col-md-9">${info.short_news}</div>
+				<label class=" col-md-2">More News: </label>
+				<div class="col-md-9">${info.long_news}</div>
+				<label class=" col-md-2">Photo: </label>
+				<div class="col-md-9">${info.photo_name}</div>
+				<label class=" col-md-2">Video URL: </label>
+				<div class="col-md-9">${info.video_url}</div>
+				<label class=" col-md-2">Date: </label>
+				<div class="col-md-9">${info.reg_date}</div>
+				<div class="col-md-9">
+					<br>
+					<input type="button" value="Back" class="btn btn-default" onclick="history.go(-1)">
+					<a href="update.jsp?id=${info.id}" class="btn btn-primary">Edit</a>
+					<a href="delete.jsp?id=${info.id}" class="btn btn-danger">Delete</a>
+				</div>
+			</dl>
+		</div>
 	</div>
+	<hr class="border-double my-4 brc-secondary-l2" />
 </div>

@@ -1,56 +1,74 @@
-
-<div class="page-header">
-	<h1>News</h1>
-</div>
-<div class="panel panel-default">
-	<div class="panel-body">
-		<div class="pull-right">
+<div class="page-content container">
+	<div class="page-header">
+		<h1 class="page-title text-primary-d2">
+			News
+			<small class="page-info text-secondary-d2">
+				<i class="fa fa-angle-double-right text-80"></i>
+				Admin editable news list
+			</small>
+		</h1>
+	</div>
+	<div class="row" style="margin-bottom: 30px;">
+		<div class="col-6" style="text-align: left;">
+			<a href="create.jsp" class="btn btn-small btn-primary">New</a>
+		</div>
+		<div class="col-6" style="text-align: right">
 			<form name="form1" method="get" class="form-inline">
-			<input type="text" name="s_keyword" class="form-control">
-			<input class="btn btn-default" type="submit" value="Search">
+				<input type="text" name="s_keyword" class="form-control">
+				<input class="btn btn-default" type="submit" value="Search">
 			</form>
 			${form_script}
 		</div>
-		<div class="pull-left">
-			<a href="create.jsp" class="btn btn-small btn-primary">New</a>
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<table id="simple-table" class="table table-bordered table-bordered-x table-hover text-dark-m2">
+				<tr>
+					<th>ID</th>
+					<th>Latest</th>
+					<th>Type</th>
+					<th>Subject</th>
+					<th>Description</th>
+					<th>More News</th>
+					<th>Photo Name</th>
+					<th>Video URL</th>
+					<th>Manage</th>
+				</tr>
+				<!--#foreach($item in $list)-->
+				<tr>
+					<td><a href="read.jsp?id=${item.id}">${item.id}</a></td>
+					<td>
+						#if(${item.latest} == "Y")
+						Yes
+						#else
+						No
+						#end
+					</td>
+					<td>${item.type}</td>
+					<td><a href="read.jsp?id=${item.id}">${item.subject}</a></td>
+					<td>${item.short_news}</td>
+					<td>${item.long_news}</td>
+					<td>${item.photo_name}</td>
+					<td>
+						#if(${item.video_url} != "")
+							Yes
+						#else
+							No
+						#end
+					</td>
+					<td>
+						<a href="read.jsp?id=${item.id}" class="btn btn-sm btn-outline-success">View</a>
+						<a href="update.jsp?id=${item.id}" class="btn btn-sm btn-outline-primary">Edit</a>
+						<a href="delete.jsp?id=${item.id}" class="btn btn-sm btn-outline-danger">Delete</a>
+					</td>
+				</tr>
+				<!--#end-->
+			</table>
+			<div class="panel-body text-center">
+				${pagebar}
+			</div>
 		</div>
 	</div>
-	<table class="table table-bordered table-striped">
-	<tr>
-		<th>ID</th>
-		<th>Latest</th>
-		<th>Type</th>
-		<th>Subject</th>
-		<th>Description</th>
-		<th>More News</th>
-		<th>Photo Name</th>
-		<th>Video URL</th>
-		<th>Manage</th>
-	</tr>
-	<!--#foreach($item in $list)-->
-	<tr>
-		<td><a href="read.jsp?id=${item.id}">${item.id}</a></td>
-		<td>
-			#if(${item.latest} == "Y")
-				Yes
-			#else
-				No
-			#end
-		</td>
-		<td>${item.type}</td>
-		<td><a href="read.jsp?id=${item.id}">${item.subject}</a></td>
-		<td>${item.short_news}</td>
-		<td>${item.long_news}</td>
-		<td>${item.photo_name}</td>
-		<td>${item.video_url}</td>
-		<td>
-			<a href="update.jsp?id=${item.id}" class="label label-primary">Edit</a>
-			<a href="delete.jsp?id=${item.id}" class="label label-danger">Delete</a>
-		</td>
-	</tr>
-	<!--#end-->
-	</table>
-	<div class="panel-body text-center">
-		${pagebar}
-	</div>
+	<hr class="border-double my-4 brc-secondary-l2" />
 </div>
+

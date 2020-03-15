@@ -1,31 +1,37 @@
-<div class="page-header">
-	<h1>Site info</h1>
-</div>
+<div class="page-content container">
+	<div class="page-header">
+		<h1 class="page-title text-primary-d2">
+			Site info
+			<small class="page-info text-secondary-d2">
+				<i class="fa fa-angle-double-right text-80"></i>
+				Admin editable site info detail
+			</small>
+		</h1>
+	</div>
 
-<div class="panel panel-default">
-	<div class="panel-heading">
-		<h3 class="panel-title">Article Info.</h3>
+	<div class="row">
+		<div class="col-9">
+			<div class="form-group row">
+				<label class=" col-md-2">Site Name: </label>
+				<div class="col-md-9">${info.site_name}</div>
+				<label class=" col-md-2">Email: </label>
+				<div class="col-md-9">${info.email}</div>
+				<label class=" col-md-2">Phone Number: </label>
+				<div class="col-md-9">${info.phone}</div>
+				<label class=" col-md-2">Telephone: </label>
+				<div class="col-md-9">${info.telephone}</div>
+				<label class=" col-md-2">Address: </label>
+				<div class="col-md-9">${info.address}</div>
+				<label class=" col-md-2">Date: </label>
+				<div class="col-md-9">${info.reg_date}</div>
+				<div class="col-md-9">
+					<br>
+					<input type="button" value="Back" class="btn btn-default" onclick="history.go(-1)">
+					<a href="update.jsp?id=${info.id}" class="btn btn-primary">Edit</a>
+					<a href="delete.jsp?id=${info.id}" class="btn btn-danger">Delete</a>
+				</div>
+			</dl>
+		</div>
 	</div>
-	<div class="panel-body">
-		<dl class="dl-horizontal">
-			<dt>Site Name</dt>
-			<dd>${info.site_name}</dd>
-			<dt>Email</dt>
-			<dd>${info.email}</dd>
-			<dt>Phone Number</dt>
-			<dd>${info.phone}</dd>
-			<dt>Telephone</dt>
-			<dd>${info.telephone}</dd>
-			<dt>Address</dt>
-			<dd>${info.address}</dd>
-			<dt>Date</dt>
-			<dd>${info.reg_date}</dd>
-			<dd>
-				<br>
-				<input type="button" value="Back" class="btn btn-default" onclick="history.go(-1)">
-				<a href="update.jsp?id=${info.id}" class="btn btn-primary">Edit</a>
-				<a href="delete.jsp?id=${info.id}" class="btn btn-danger">Delete</a>
-			</dd>
-		</dl>
-	</div>
+	<hr class="border-double my-4 brc-secondary-l2" />
 </div>

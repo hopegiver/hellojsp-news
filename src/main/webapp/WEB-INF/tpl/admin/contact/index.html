@@ -1,46 +1,59 @@
-
-<div class="page-header">
-	<h1>Comments to the news</h1>
-</div>
-<div class="panel panel-default">
-	<div class="panel-body">
-		<div class="pull-right">
+<div class="page-content container">
+	<div class="page-header">
+		<h1 class="page-title text-primary-d2">
+			Comments to the news
+			<small class="page-info text-secondary-d2">
+				<i class="fa fa-angle-double-right text-80"></i>
+				List
+			</small>
+		</h1>
+	</div>
+	<div class="row" style="margin-bottom: 30px;">
+		<div class="col-6" style="text-align: left;">
+			<a href="create.jsp" class="btn btn-small btn-primary">New</a>
+		</div>
+		<div class="col-6" style="text-align: right">
 			<form name="form1" method="get" class="form-inline">
-			<input type="text" name="s_keyword" class="form-control">
-			<input class="btn btn-default" type="submit" value="Search">
+				<input type="text" name="s_keyword" class="form-control">
+				<input class="btn btn-default" type="submit" value="Search">
 			</form>
 			${form_script}
 		</div>
 	</div>
-	<table class="table table-bordered table-striped">
-	<tr>
-		<th>ID</th>
-		<th>First Name</th>
-		<th>Last name</th>
-		<th>Phone</th>
-		<th>Email</th>
-		<th>Title</th>
-		<th>Subject</th>
-		<th>Reg Date</th>
-		<th>Manage</th>
-	</tr>
-	<!--#foreach($item in $list)-->
-	<tr>
-		<td><a href="read.jsp?id=${item.id}">${item.id}</a></td>
-		<td><a href="read.jsp?id=${item.id}">${item.first_name}</a></td>
-		<td><a href="read.jsp?id=${item.id}">${item.last_name}</a></td>
-		<td>${item.phone}</td>
-		<td>${item.email}</td>
-		<td>${item.subject}</td>
-		<td>${item.content}</td>
-		<td>${item.reg_date}</td>
-		<td>
-			<a href="delete.jsp?id=${item.id}" class="label label-danger">Delete</a>
-		</td>
-	</tr>
-	<!--#end-->
-	</table>
-	<div class="panel-body text-center">
-		${pagebar}
+	<div class="row">
+		<div class="col-10">
+			<table id="simple-table" class="table table-bordered table-bordered-x table-hover text-dark-m2">
+				<tr>
+					<th>ID</th>
+					<th>First Name</th>
+					<th>Last name</th>
+					<th>Phone</th>
+					<th>Email</th>
+					<th>Title</th>
+					<th>Subject</th>
+					<th>Reg Date</th>
+					<th>Manage</th>
+				</tr>
+				#foreach($item in $list)
+				<tr>
+					<td><a href="read.jsp?id=${item.id}">${item.id}</a></td>
+					<td><a href="read.jsp?id=${item.id}">${item.first_name}</a></td>
+					<td><a href="read.jsp?id=${item.id}">${item.last_name}</a></td>
+					<td>${item.phone}</td>
+					<td>${item.email}</td>
+					<td>${item.subject}</td>
+					<td>${item.content}</td>
+					<td>${item.reg_date}</td>
+					<td>
+						<a href="delete.jsp?id=${item.id}" class="btn btn-sm btn-outline-danger">Delete</a>
+					</td>
+				</tr>
+				#end
+			</table>
+			<div class="panel-body text-center">
+				${pagebar}
+			</div>
+		</div>
 	</div>
+	<hr class="border-double my-4 brc-secondary-l2" />
 </div>

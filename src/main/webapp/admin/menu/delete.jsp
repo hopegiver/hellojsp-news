@@ -33,7 +33,7 @@ if(m.isPost() && f.validate()) {
 
 //Step6
 p.setLayout("admin");
-p.setBody("admin/news/delete");
+p.setBody("admin/menu/delete");
 p.setVar("info", info);
 p.setVar("form_script", f.getScript());
 p.print();
