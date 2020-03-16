@@ -15,16 +15,17 @@
 				<div class="form-group">
 					<label class="control-label col-sm-2">Latest News</label>
 					<div class="col-sm-3">
-						<select class="form-control" name="latest">
-							<option value="Y">Yes</option>
-							<option value="N">No</option>
-						</select>
+						<input type="checkbox" class="ace-switch input-lg ace-switch-yesno bgc-purple-d1" name="latest" checked value="Y" />
+<!--						<select class="form-control" name="latest">-->
+<!--							<option value="Y">Yes</option>-->
+<!--							<option value="N">No</option>-->
+<!--						</select>-->
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="control-label col-sm-2">Type</label>
 					<div class="col-sm-3">
-						<select class="form-control" name="type">
+						<select class="form-control ace-select text-dark-m1 bgc-default-l5 bgc-h-warning-l3  brc-default-m3 brc-h-warning-m1" name="type">
 							<option value="">Select</option>
 							<option value="photo">Photo news</option>
 							<option value="media">Media news</option>
@@ -37,7 +38,7 @@
 				</div>
 				<div class="form-group">
 					<label class="control-label col-sm-2">Description</label>
-					<div class="col-sm-8"><textarea name="short_news" style="height:50px" maxlength="200" class="form-control"></textarea></div>
+					<div class="col-sm-8"><textarea name="short_news" style="height:70px" maxlength="200" class="form-control"></textarea></div>
 				</div>
 				<div class="form-group">
 					<label class="control-label col-sm-2">More news</label>
