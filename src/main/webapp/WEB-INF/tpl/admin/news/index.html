@@ -1,4 +1,4 @@
-<div class="page-content container">
+<div class="page-content container" style="margin-left: 0">
 	<div class="page-header">
 		<h1 class="page-title text-primary-d2">
 			News
@@ -10,12 +10,12 @@
 	</div>
 	<div class="row" style="margin-bottom: 30px;">
 		<div class="col-6" style="text-align: left;">
-			<a href="create.jsp" class="btn btn-small btn-primary">New</a>
+			<a href="create.jsp" class="btn btn-md btn-info">New</a>
 		</div>
 		<div class="col-6" style="text-align: right">
 			<form name="form1" method="get" class="form-inline">
 				<input type="text" name="s_keyword" class="form-control">
-				<input class="btn btn-default" type="submit" value="Search">
+				<input class="btn btn-info" type="submit" value="Search">
 			</form>
 			${form_script}
 		</div>
@@ -28,8 +28,6 @@
 					<th>Latest</th>
 					<th>Type</th>
 					<th>Subject</th>
-					<th>Description</th>
-					<th>More News</th>
 					<th>Photo Name</th>
 					<th>Video URL</th>
 					<th>Manage</th>
@@ -39,21 +37,25 @@
 					<td><a href="read.jsp?id=${item.id}">${item.id}</a></td>
 					<td>
 						#if(${item.latest} == "Y")
-						Yes
+						<span style="color: #0a81bb">Yes</span>
 						#else
 						No
 						#end
 					</td>
-					<td>${item.type}</td>
+					<td>
+						#if(${item.type} == "photo")
+						<span style="color: #55bb43">Photo</span>
+						#elseif(${item.type} == "media")
+						<span style="color: #0a81bb">Media</span>
+						#end
+					</td>
 					<td><a href="read.jsp?id=${item.id}">${item.subject}</a></td>
-					<td>${item.short_news}</td>
-					<td>${item.long_news}</td>
 					<td>${item.photo_name}</td>
 					<td>
 						#if(${item.video_url} != "")
-							Yes
+						<a class="btn btn-blue" style="color: #fff" onclick="myFunction('${item.video_url}')">Video</a>
 						#else
-							No
+							No data
 						#end
 					</td>
 					<td>
@@ -69,6 +71,12 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		function myFunction(url) {
+			var myWindow = window.open(url, "", "width=700,height=500");
+		}
+	</script>
+
 	<hr class="border-double my-4 brc-secondary-l2" />
 </div>
 

@@ -13,7 +13,7 @@ Message msg = new Message();
 p.setVar("msg", msg);
 
 String userId = null;
-String UploadPath = "D:/workspace/hellojsp-news/src/main/webapp/uploads";
+String UploadPath = "E:/Intel-Workspace/hellojsp-news/src/main/webapp/uploads";
 
 Auth auth = new Auth(request, response);
 if(auth.validate()) {

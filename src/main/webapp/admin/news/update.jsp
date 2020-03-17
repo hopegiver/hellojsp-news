@@ -15,7 +15,7 @@ DataSet info = news.find("id = " + id);
 if(!info.next()) { m.jsError("No Data"); return; }
 
 //Step4
-f.addElement("latest", info.s("latest"), "title:'latest', required:true");
+f.addElement("latest", info.s("latest"), "title:'latest'");
 f.addElement("type", info.s("type"), "title:'type', required:true");
 f.addElement("subject", info.s("subject"), "title:'subject', required:true");
 f.addElement("short_news", info.s("short_news"), "title:'short_news', required:true");

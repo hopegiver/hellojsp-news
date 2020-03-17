@@ -7,7 +7,7 @@
 	NewsDao news = new NewsDao();
 
 //Step2
-	f.addElement("latest", null, "title:'latest', required:true");
+	f.addElement("latest", null, "title:'latest'");
 	f.addElement("type", null, "title:'type', required:true");
 	f.addElement("subject", null, "title:'subject', required:true");
 	f.addElement("short_news", null, "title:'short_news', required:true");
