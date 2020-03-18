@@ -22,6 +22,17 @@
         while(list.next()) {
             list.put("reg_date", m.time("yyyy-MM-dd", list.s("reg_date")));
         }
+        DataSet menuInfo = menu.find("status != -1", "id, menu_name, module, module_id, parent_id, sort", "sort");
+
+        DataSet subMenu = menu.find("status != -1 AND parent_id != 0", "id, menu_name, module, module_id, sort, parent_id, reg_date", "sort");
+
+        while(subMenu.next()) {
+            subMenu.put("reg_date", m.time("yyyy-MM-dd", list.s("reg_date")));
+        }
+
+        while(menuInfo.next()) {
+            menuInfo.put("reg_date", m.time("yyyy-MM-dd", list.s("reg_date")));
+        }
 
         DataSet parent = menu.find("status != -1 AND parent_id = 0 ");
 
@@ -29,6 +40,8 @@
         //    p.setDebug(out);
         p.setLayout("admin");
         p.setBody("admin/menu/index");
+        p.setVar("menuInfo", menuInfo);
+        p.setVar("subMenu", subMenu);
         p.setVar("list", list);
         p.setVar("parent", parent);
         p.setVar("total_cnt", lm.getTotalNum());

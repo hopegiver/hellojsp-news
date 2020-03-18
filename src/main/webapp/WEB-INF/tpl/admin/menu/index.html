@@ -35,27 +35,52 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!--#foreach($item in $list)-->
-                    <tr>
-                        <td><a href="read.jsp?id=${item.id}">${item.id}</a></td>
-                        <td><a href="read.jsp?id=${item.id}">${item.module}</a></td>
-                        <td><a href="read.jsp?id=${item.id}">${item.menu_name}</a></td>
-                        <td>
-                            #foreach($parent in $parent)
-                                #if(${parent.id} == ${item.parent_id})
-                                    ${parent.menu_name}
+                    #foreach($item in $menuInfo)
+                        #if(${item.parent_id} == 0)
+                        <tr>
+                            <td><a href="read.jsp?id=${item.id}">${item.id}</a></td>
+                            <td><a href="read.jsp?id=${item.id}">${item.module}</a></td>
+                            <td><a href="read.jsp?id=${item.id}">${item.menu_name}</a></td>
+                            <td>
+                                #foreach($parent in $parent)
+                                    #if(${parent.id} == ${item.parent_id})
+                                        ${parent.menu_name}
+                                    #end
                                 #end
+                            </td>
+                            <td>${item.sort}</td>
+                            <td>${item.reg_date}</td>
+                            <td>
+                                <a href="read.jsp?id=${item.id}" class="btn btn-sm btn-outline-success">View</a>
+                                <a href="update.jsp?id=${item.id}" class="btn btn-sm btn-outline-primary">Edit</a>
+                                <a href="delete.jsp?id=${item.id}" class="btn btn-sm btn-outline-danger">Delete</a>
+                            </td>
+                        </tr>
+                        #end
+                        #foreach($subItem in $subMenu)
+                            #if(${item.id} == ${subItem.parent_id})
+                                <tr style="background-color: #c9cacd">
+                                    <td><a href="read.jsp?id=${subItem.id}">${subItem.id}</a></td>
+                                    <td><a href="read.jsp?id=${subItem.id}">${subItem.module}</a></td>
+                                    <td><a href="read.jsp?id=${subItem.id}">${subItem.menu_name}</a></td>
+                                    <td>
+                                        #foreach($parent in $parent)
+                                        #if(${parent.id} == ${subItem.parent_id})
+                                        ${parent.menu_name}
+                                        #end
+                                        #end
+                                    </td>
+                                    <td>${subItem.sort}</td>
+                                    <td>${subItem.reg_date}</td>
+                                    <td>
+                                        <a href="read.jsp?id=${subItem.id}" class="btn btn-sm btn-outline-success">View</a>
+                                        <a href="update.jsp?id=${subItem.id}" class="btn btn-sm btn-outline-primary">Edit</a>
+                                        <a href="delete.jsp?id=${subItem.id}" class="btn btn-sm btn-outline-danger">Delete</a>
+                                    </td>
+                                </tr>
                             #end
-                        </td>
-                        <td>${item.sort}</td>
-                        <td>${item.reg_date}</td>
-                        <td>
-                            <a href="read.jsp?id=${item.id}" class="btn btn-sm btn-outline-success">View</a>
-                            <a href="update.jsp?id=${item.id}" class="btn btn-sm btn-outline-primary">Edit</a>
-                            <a href="delete.jsp?id=${item.id}" class="btn btn-sm btn-outline-danger">Delete</a>
-                        </td>
-                    </tr>
-                    <!--#end-->
+                        #end
+                    #end
                 </tbody>
             </table>
 <!--            <div class="row">-->
