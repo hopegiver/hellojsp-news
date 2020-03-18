@@ -19,10 +19,12 @@ if(!info.next()) { m.jsError("No Data"); return; }
 info.put("content", m.htt(info.s("content")));
 info.put("reg_date", m.time("yyyy-MM-dd HH:mm", info.s("reg_date")));
 
+    pageTitle = "blog";
 //Step5
 p.setLayout("admin");
 p.setBody("admin/blog/read");
 p.setVar("info", info);
+p.setVar("pageTitle", pageTitle);
 p.print();
 
 %>

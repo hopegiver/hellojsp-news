@@ -52,12 +52,14 @@ if(m.isPost() && f.validate()) {
 	m.redirect("index.jsp");
 	return;
 }
+	pageTitle = "banner";
 
 //Step6
 p.setLayout("admin");
 p.setBody("admin/banner/update");
 p.setVar("info", info);
 p.setVar("form_script", f.getScript());
+p.setVar("pageTitle", pageTitle);
 p.print();
 
 %>

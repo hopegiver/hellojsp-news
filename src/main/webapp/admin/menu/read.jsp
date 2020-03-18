@@ -19,10 +19,13 @@ if(!info.next()) { m.jsError("No Data"); return; }
 info.put("module_id", m.htt(info.s("module_id")));
 info.put("reg_date", m.time("yyyy-MM-dd HH:mm", info.s("reg_date")));
 
+    pageTitle = "menu";
 //Step5
 p.setLayout("admin");
 p.setBody("admin/menu/read");
 p.setVar("info", info);
+p.setVar("pageTitle", pageTitle);
+p.setVar("pageTitle", pageTitle);
 p.print();
 
 %>

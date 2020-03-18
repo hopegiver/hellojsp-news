@@ -22,7 +22,7 @@
         while(list.next()) {
             list.put("reg_date", m.time("yyyy-MM-dd", list.s("reg_date")));
         }
-
+        pageTitle = "news";
         //Step4
         //    p.setDebug(out);
         p.setLayout("admin");
@@ -31,6 +31,7 @@
         p.setVar("total_cnt", lm.getTotalNum());
         p.setVar("pagebar", lm.getPaging());
         p.setVar("form_script", f.getScript());
+        p.setVar("pageTitle", pageTitle);
         p.print();
 
     } else {

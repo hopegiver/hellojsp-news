@@ -15,6 +15,8 @@ p.setVar("msg", msg);
 String userId = null;
 String UploadPath = "E:/Intel-Workspace/hellojsp-news/src/main/webapp/uploads";
 
+String pageTitle = null;
+
 Auth auth = new Auth(request, response);
 if(auth.validate()) {
 	userId = auth.get("user_id");

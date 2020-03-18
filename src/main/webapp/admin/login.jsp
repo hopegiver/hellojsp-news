@@ -27,6 +27,7 @@ UserDao user = new UserDao();
 	}
 	p.setBody("admin/login");
 	p.setVar("form_script", f.getScript());
+	p.setVar("pageTitle", pageTitle);
 	p.print();
 
 %>

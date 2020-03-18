@@ -35,10 +35,12 @@ if(m.isPost() && f.validate()) {
 	return;
 }
 //Step4
+	pageTitle = "info";
 //p.setDebug(out);
 p.setLayout("admin");
 p.setBody("admin/info/create");
 p.setVar("form_script", f.getScript());
+p.setVar("pageTitle", pageTitle);
 p.print();
 
 %>

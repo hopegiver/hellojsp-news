@@ -7,6 +7,7 @@
 //p.setDebug(out);
 p.setLayout("admin");
 p.setBody("front/index");
+p.setVar("pageTitle", pageTitle);
 p.print();
 
 %>

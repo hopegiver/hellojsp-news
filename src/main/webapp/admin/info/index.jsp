@@ -24,6 +24,7 @@
         }
 
         //Step4
+        pageTitle = "info";
         //    p.setDebug(out);
         p.setLayout("admin");
         p.setBody("admin/info/index");
@@ -31,6 +32,7 @@
         p.setVar("total_cnt", lm.getTotalNum());
         p.setVar("pagebar", lm.getPaging());
         p.setVar("form_script", f.getScript());
+        p.setVar("pageTitle", pageTitle);
         p.print();
 
     } else {

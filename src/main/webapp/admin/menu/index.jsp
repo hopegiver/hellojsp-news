@@ -37,6 +37,7 @@
         DataSet parent = menu.find("status != -1 AND parent_id = 0 ");
 
         //Step4
+        pageTitle = "menu";
         //    p.setDebug(out);
         p.setLayout("admin");
         p.setBody("admin/menu/index");
@@ -47,6 +48,7 @@
         p.setVar("total_cnt", lm.getTotalNum());
         p.setVar("pagebar", lm.getPaging());
         p.setVar("form_script", f.getScript());
+        p.setVar("pageTitle", pageTitle);
         p.print();
 
     } else {

@@ -36,12 +36,15 @@ if(m.isPost() && f.validate()) {
 	m.redirect("index.jsp");
 	return;
 }
+	pageTitle = "menu";
 //Step4
 //p.setDebug(out);
 p.setLayout("admin");
 p.setBody("admin/menu/create");
 p.setVar("form_script", f.getScript());
 p.setVar("parent", parent);
+p.setVar("pageTitle", pageTitle);
+p.setVar("pageTitle", pageTitle);
 p.print();
 
 %>

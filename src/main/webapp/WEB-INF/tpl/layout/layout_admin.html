@@ -511,18 +511,18 @@
                                         <span class="fadeinable mt-n2 text-125">&hellip;</span>
                                     -->
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item #if(${pageTitle} == 'dashboard') active #end">
                                     <a href="/admin/dashboard.jsp" class="nav-link">
-                                        <i class="nav-icon fa fa-tachometer-alt"></i>
+                                        <i class="nav-icon fa fa-tachometer-alt nav-icon-round bgc-primary-tp1"></i>
                                         <span class="nav-text fadeable">
                                             <span>Dashboard</span>
                                         </span>
                                     </a>
                                     <b class="sub-arrow"></b>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item #if(${pageTitle} == 'menu') active #end">
                                     <a href="/admin/menu/index.jsp" class="nav-link ">
-                                        <i class="nav-icon fa fa-list"></i>
+                                        <i class="nav-icon fa fa-list nav-icon-round bgc-warning-tp1"></i>
                                         <span class="nav-text fadeable">
                                             <span>Menu</span>
                                         </span>
@@ -532,49 +532,49 @@
                                         -->
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item #if(${pageTitle} == 'banner') active #end">
                                     <a href="/admin/banner/index.jsp" class="nav-link ">
-                                        <i class="nav-icon fa fa-desktop"></i>
+                                        <i class="nav-icon fa fa-desktop nav-icon-round bgc-info-tp1"></i>
                                         <span class="nav-text fadeable">
                                             <span>Banner</span>
                                         </span>
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item #if(${pageTitle} == 'news') active #end">
                                     <a href="/admin/news/index.jsp" class="nav-link ">
-                                        <i class="nav-icon fa fa-table"></i>
+                                        <i class="nav-icon fa fa-table nav-icon-round bgc-danger-tp1"></i>
                                         <span class="nav-text fadeable">
                                             <span>News</span>
                                         </span>
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item #if(${pageTitle} == 'blog') active #end">
                                     <a href="/admin/blog/index.jsp" class="nav-link ">
-                                        <i class="nav-icon fa fa-folder-open"></i>
+                                        <i class="nav-icon fa fa-folder-open nav-icon-round bgc-pink-tp1"></i>
                                         <span class="nav-text fadeable">
                                             <span>Blog</span>
                                         </span>
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item #if(${pageTitle} == 'user') active #end">
                                     <a href="/admin/user/index.jsp" class="nav-link ">
-                                        <i class="nav-icon fa fa-user-circle"></i>
+                                        <i class="nav-icon fa fa-users nav-icon-round bgc-success-tp1"></i>
                                         <span class="nav-text fadeable">
                                             <span>User</span>
                                         </span>
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item #if(${pageTitle} == 'info') active #end">
                                     <a href="/admin/info/index.jsp" class="nav-link ">
-                                        <i class="nav-icon fa fa-user-secret"></i>
+                                        <i class="nav-icon fa fa-user-secret nav-icon-round bgc-danger-tp1"></i>
                                         <span class="nav-text fadeable">
                                             <span>Info</span>
                                         </span>
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item #if(${pageTitle} == 'contact') active #end">
                                     <a href="/admin/contact/index.jsp" class="nav-link ">
-                                        <i class="nav-icon fa fa-edit"></i>
+                                        <i class="nav-icon fa fa-edit nav-icon-round bgc-yellow-tp1"></i>
                                         <span class="nav-text fadeable">
                                             <span>Comments</span>
                                         </span>
@@ -587,7 +587,7 @@
                             <div class="sidebar-section-item fadeable-bottom">
                                 <div class="fadeinable">
                                     <div class="pos-rel">
-                                        <img src="/admin-source/assets/image/avatar/avatar4.jpg" width="42" class="radius-round float-left mx-2 border-2 px-1px brc-secondary-m2" />
+                                        <img src="/admin-source/assets/image/user.jpg" width="42" class="radius-round float-left mx-2 border-2 px-1px brc-secondary-m2" />
                                         <span class="bgc-success-tp2 radius-round border-2 brc-white p-1 position-tr mr-1"></span>
                                     </div>
                                 </div>
@@ -596,7 +596,7 @@
                                     <div id="sidebar-footer-bg" class="bgc-white d-flex align-items-center shadow-sm mx-2 mt-2px py-2 radius-t-1 border-1 border-t-2 border-b-0 brc-primary-m3">
                                         <div class="d-flex mr-auto py-1">
                                             <div class="pos-rel">
-                                                <img src="/admin-source/assets/image/avatar/avatar4.jpg" width="42" class="radius-round float-left mx-2 border-2 px-1px brc-default-m2" />
+                                                <img src="/admin-source/assets/image/user.jpg" width="42" class="radius-round float-left mx-2 border-2 px-1px brc-default-m2" />
                                                 <span class="bgc-success-tp2 radius-round border-2 brc-white p-1 position-tr mr-1 mt-1"></span>
                                             </div>
 
@@ -1192,6 +1192,8 @@
         <script type="text/javascript" src="/admin-source/node_modules/sortablejs/Sortable.js"></script>
 
 		<script type="text/javascript" src="/admin-source/node_modules/summernote/dist/summernote-lite.js"></script>
+
+		<script type="text/javascript" src="/admin-source/node_modules/basictable/jquery.basictable.js"></script>
 
 
 		<script type="text/javascript" src="/admin-source/dist/js/ace.js"></script>

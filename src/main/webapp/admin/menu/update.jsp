@@ -44,14 +44,15 @@ if(m.isPost() && f.validate()) {
 	m.redirect("index.jsp");
 	return;
 }
-
-
+	pageTitle = "menu";
 //Step6
 p.setLayout("admin");
 p.setBody("admin/menu/update");
 p.setVar("info", info);
 p.setVar("parent", parent);
 p.setVar("form_script", f.getScript());
+p.setVar("pageTitle", pageTitle);
+p.setVar("pageTitle", pageTitle);
 p.print();
 
 %>

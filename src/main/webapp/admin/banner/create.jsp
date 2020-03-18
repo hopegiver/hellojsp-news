@@ -35,12 +35,14 @@ if(m.isPost() && f.validate()) {
 	m.redirect("index.jsp");
 	return;
 }
+pageTitle = "banner";
 
 //Step4
 p.setDebug(out);
 p.setLayout("admin");
 p.setBody("admin/banner/create");
 p.setVar("form_script", f.getScript());
+p.setVar("pageTitle", pageTitle);
 p.print();
 
 %>

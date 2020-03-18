@@ -16,11 +16,12 @@ if(!info.next()) { m.jsError("No Data"); return; }
 
 //Step4
 info.put("reg_date", m.time("yyyy-MM-dd HH:mm", info.s("reg_date")));
-
+    pageTitle = "contact";
 //Step5
 p.setLayout("admin");
 p.setBody("admin/contact/read");
 p.setVar("info", info);
+p.setVar("pageTitle", pageTitle);
 p.print();
 
 %>

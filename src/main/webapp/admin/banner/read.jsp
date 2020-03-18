@@ -18,11 +18,12 @@ if(!info.next()) { m.jsError("No Data"); return; }
 //Step4
 info.put("content", m.htt(info.s("content")));
 info.put("reg_date", m.time("yyyy-MM-dd HH:mm", info.s("reg_date")));
-
+    pageTitle = "banner";
 //Step5
 p.setLayout("admin");
 p.setBody("admin/banner/read");
 p.setVar("info", info);
+p.setVar("pageTitle", pageTitle);
 p.print();
 
 %>
