@@ -1,11 +1,6 @@
-<%@ page contentType="text/html; charset=utf-8" %><%@ include file="/init.jsp" %><%
+<%@ page contentType="text/html; charset=utf-8" %><%@ include file="../init.jsp" %><%
 
 //Step1
-	if(userId == null){
-		m.jsAlert("Need to login");
-		m.jsReplace("/admin/login.jsp", "window");
-	}
-
 	InfoDao siteInfo = new InfoDao();
 
 //Step2

@@ -1,6 +1,5 @@
-<%@ page contentType="text/html; charset=utf-8" %><%@ include file="/init.jsp" %><%
+<%@ page contentType="text/html; charset=utf-8" %><%@ include file="../init.jsp" %><%
 
-    if(userId != null){
         //Step1
         MenuDao menu = new MenuDao();
 
@@ -50,10 +49,5 @@
         p.setVar("form_script", f.getScript());
         p.setVar("pageTitle", pageTitle);
         p.print();
-
-    } else {
-        m.jsAlert("Need to login");
-        m.jsReplace("/admin/login.jsp", "window");
-    }
 
 %>
