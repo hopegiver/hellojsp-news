@@ -19,8 +19,9 @@
 	</div>
 	<div class="row">
 		<div class="col-10">
-			<table id="simple-table" class="table table-bordered table-bordered-x table-hover text-dark-m2">
-				<tr>
+			<table class="table table-striped-success table-borderless text-dark-m1" id="responsive-table">
+				<thead class="text-dark-m3 bgc-grey-l4">
+				<tr class="bgc-success-m1 text-white">
 					<th>ID</th>
 					<th>First Name</th>
 					<th>Last name</th>
@@ -30,6 +31,7 @@
 					<th width="11%">Date</th>
 					<th width="19%">Manage</th>
 				</tr>
+				</thead>
 				#foreach($item in $list)
 				<tr>
 					<td><a href="read.jsp?id=${item.id}">${item.id}</a></td>

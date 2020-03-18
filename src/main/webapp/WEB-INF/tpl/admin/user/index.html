@@ -22,15 +22,17 @@
 	</div>
 	<div class="row">
 		<div class="col-10">
-			<table id="simple-table" class="table table-bordered table-bordered-x table-hover text-dark-m2">
-				<tr>
+			<table class="table table-striped-success table-borderless text-dark-m1" id="responsive-table">
+				<thead class="text-dark-m3 bgc-grey-l4">
+				<tr class="bgc-success-m1 text-white">
 					<th>ID</th>
 					<th>Login Id</th>
 					<th>Nick Name</th>
 					<th>Email</th>
 					<th>Manage</th>
 				</tr>
-				<!--#foreach($item in $list)-->
+				</thead>
+				#foreach($item in $list)
 				<tr>
 					<td><a href="read.jsp?id=${item.id}">${item.id}</a></td>
 					<td><a href="read.jsp?id=${item.id}">${item.login_id}</a></td>
@@ -42,7 +44,7 @@
 						<a href="delete.jsp?id=${item.id}" class="btn radius-1 btn-sm btn-brc-tp btn-outline-default btn-h-outline-danger btn-a-outline-danger btn-text-danger"><i class="fa fa-trash-alt"></i> </a>
 					</td>
 				</tr>
-				<!--#end-->
+				#end
 			</table>
 			<div class="panel-body text-center">
 				${pagebar}
