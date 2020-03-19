@@ -6,19 +6,19 @@ jQuery(function($) {
     '<span class="selected-icon d-inline-block text-center border-1 bgc-warning px-1px mx-1 text-70 pb-1px radius-2px">\
         <i class="w-2 fa fa-check text-white"></i>\
     </span>';
-    
-    var deselectedIcon = 
+
+    var deselectedIcon =
     '<span class="deselected-icon d-inline-block text-center border-1 bgc-white brc-secondary-m3 px-1px mx-1 text-70 pb-1px radius-2px">\
         <i class="w-2 fa fa-times text-orange-l4"></i>\
     </span>';
 
-    
+
     var categoryTree = $('#id-jqtree-categories');
     categoryTree.tree({
         data: categoryData,
         autoOpen: false,
         useContextMenu: false,
- 
+
         closedIcon : $('<i class="bgc-white w-2 far fa-plus-square text-grey-l1 text-110"></i>'),
         openedIcon : $('<i class="bgc-white w-2 far fa-minus-square text-default-d2 text-110"></i>'),
 
@@ -46,6 +46,7 @@ jQuery(function($) {
         e.preventDefault();
 
         var selectedNode = e.node;
+        // alert(selectedNode.id);
         if (selectedNode.id === undefined || selectedNode.children.length > 0) {
             return;
         }
@@ -58,7 +59,7 @@ jQuery(function($) {
             var icon = $(selectedNode.element).find('.selected-icon');
             $(deselectedIcon).insertAfter(icon);
             icon.remove();
-        }    
+        }
         else {
             categoryTree.tree('addToSelection', selectedNode);
 
