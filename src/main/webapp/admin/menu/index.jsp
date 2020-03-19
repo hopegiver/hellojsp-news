@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=utf-8" %><%@ include file="../init.jsp" %><%
+<%@ page contentType="text/html; charset=utf-8" %><%@ include file="../init.jsp" %><%--<%@ include file="update.jsp" %>--%><%
 
         //Step1
         MenuDao menu = new MenuDao();
@@ -35,6 +35,20 @@
 
         DataSet parent = menu.find("status != -1 AND parent_id = 0 ");
 
+        int id = m.reqInt("id");
+        if(id == 0) { m.jsError("Primary Key is required"); return; }
+
+//Step3
+        DataSet info = menu.find("id = " + id);
+        if(!info.next()) { m.jsError("No Data"); return; }
+//Step4
+        f.addElement("module", info.s("module"), "title:'module'");
+        f.addElement("menu_name", info.s("menu_name"), "title:'menu_name', required:true");
+        f.addElement("module_id", info.s("module_id"), "title:'module_id'");
+        f.addElement("parent_id", info.s("parent_id"), "title:'parent_id'");
+        f.addElement("sort", info.s("sort"), "title:'sort'");
+        f.addElement("reg_date", info.s("reg_date"), "title:'reg_date', editable:false");
+
         //Step4
         pageTitle = "menu";
         //    p.setDebug(out);
@@ -43,6 +57,7 @@
         p.setVar("menuInfo", menuInfo);
         p.setVar("subMenu", subMenu);
         p.setVar("list", list);
+        p.setVar("info", info);
         p.setVar("parent", parent);
         p.setVar("total_cnt", lm.getTotalNum());
         p.setVar("pagebar", lm.getPaging());

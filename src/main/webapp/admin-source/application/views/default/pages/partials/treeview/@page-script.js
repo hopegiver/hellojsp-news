@@ -47,6 +47,10 @@ jQuery(function($) {
 
         var selectedNode = e.node;
         // alert(selectedNode.id);
+        var url = window.location.pathname;
+
+        location.replace(url + "?id=" + selectedNode.id);
+
         if (selectedNode.id === undefined || selectedNode.children.length > 0) {
             return;
         }

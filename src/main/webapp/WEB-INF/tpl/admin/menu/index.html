@@ -8,11 +8,6 @@
             </small>
         </h1>
     </div>
-    <div class="row" style="margin-bottom: 30px;">
-        <div class="col-9" style="text-align: left;">
-            <a href="create.jsp" class="btn btn-md btn-info">New</a>
-        </div>
-    </div>
     <div class="row" style="padding-bottom: 50px">
         <div class="col-12 col-md-6 mt-3 mt-md-0">
             <div class="card border-0">
@@ -26,72 +21,55 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="row">
-        <div class="col-12">
-            <table class="table table-striped-success table-borderless text-dark-m1" id="responsive-table">
-                <thead class="text-dark-m3 bgc-grey-l4">
-                <tr class="bgc-success-m1 text-white">
-                        <th>ID</th>
-                        <th>Menu name</th>
-                        <th>Parent Id</th>
-                        <th>sort</th>
-                        <th>Reg Date</th>
-                        <th>Manage</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    #foreach($item in $menuInfo)
-                        #if(${item.parent_id} == 0)
-                        <tr>
-                            <td><a href="read.jsp?id=${item.id}">${item.id}</a></td>
-                            <td><a href="read.jsp?id=${item.id}">${item.menu_name}</a></td>
-                            <td>
-                                #foreach($parent in $parent)
-                                    #if(${parent.id} == ${item.parent_id})
-                                        ${parent.menu_name}
-                                    #end
-                                #end
-                            </td>
-                            <td>${item.sort}</td>
-                            <td>${item.reg_date}</td>
-                            <td>
-                                <a href="read.jsp?id=${item.id}" class="btn radius-1 btn-sm btn-brc-tp btn-outline-default btn-h-outline-primary btn-a-outline-primary btn-text-primary"><i class="fa fa-eye"></i> </a>
-                                <a href="update.jsp?id=${item.id}" class="btn radius-1 btn-sm btn-brc-tp btn-outline-default btn-h-outline-success btn-a-outline-success btn-text-success"><i class="fa fa-pencil-alt"></i> </a>
-                                <a href="delete.jsp?id=${item.id}" class="btn radius-1 btn-sm btn-brc-tp btn-outline-default btn-h-outline-danger btn-a-outline-danger btn-text-danger"><i class="fa fa-trash-alt"></i> </a>
-                            </td>
-                        </tr>
-                        #end
-                        #foreach($subItem in $subMenu)
-                            #if(${item.id} == ${subItem.parent_id})
-                                <tr style="background-color: #c9cacd">
-                                    <td><a href="read.jsp?id=${subItem.id}">${subItem.id}</a></td>
-                                    <td><a href="read.jsp?id=${subItem.id}">${subItem.menu_name}</a></td>
-                                    <td>
-                                        #foreach($parent in $parent)
-                                        #if(${parent.id} == ${subItem.parent_id})
-                                        ${parent.menu_name}
-                                        #end
-                                        #end
-                                    </td>
-                                    <td>${subItem.sort}</td>
-                                    <td>${subItem.reg_date}</td>
-                                    <td>
-                                        <a href="read.jsp?id=${subItem.id}" class="btn radius-1 btn-sm btn-brc-tp btn-outline-default btn-h-outline-primary btn-a-outline-primary btn-text-primary"><i class="fa fa-eye"></i> </a>
-                                        <a href="update.jsp?id=${subItem.id}" class="btn radius-1 btn-sm btn-brc-tp btn-outline-default btn-h-outline-success btn-a-outline-success btn-text-success"><i class="fa fa-pencil-alt"></i> </a>
-                                        <a href="delete.jsp?id=${subItem.id}" class="btn radius-1 btn-sm btn-brc-tp btn-outline-default btn-h-outline-danger btn-a-outline-danger btn-text-danger"><i class="fa fa-trash-alt"></i> </a>
-                                    </td>
-                                </tr>
-                            #end
-                        #end
-                    #end
-                </tbody>
-            </table>
-            <div class="pagination justify-content-center">
-                ${pagebar}
+    <div class="col-6">
+        <form name="form1" method="post" class="form-horizontal" enctype="multipart/form-data">
+            <div class="form-group">
+                <label class="control-label col-sm-6">Module</label>
+                <div class="col-sm-12"><input type="text" name="module" class="form-control"></div>
             </div>
-        </div>
+            <div class="form-group">
+                <label class="control-label col-sm-6">Menu Name</label>
+                <div class="col-sm-12"><input type="text" name="menu_name"  class="form-control"></div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-6">Module Id</label>
+                <div class="col-sm-5">
+                    <select class="form-control ace-select text-dark-m1 bgc-default-l5 bgc-h-warning-l3  brc-default-m3 brc-h-warning-m1" name="module_id">
+                        <option value="">Select</option>
+                        <option value="1">Home</option>
+                        <option value="2">News</option>
+                        <option value="3">Media news</option>
+                        <option value="4">Gallery</option>
+                        <option value="5">Blog news</option>
+                        <option value="6">Comment</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-6">Parent Id</label>
+                <div class="col-sm-12">
+                    <select class="form-control ace-select text-dark-m1 bgc-default-l5 bgc-h-warning-l3  brc-default-m3 brc-h-warning-m1" name="parent_id" id="select">
+                        <option value="0">Select</option>
+                        #foreach($parent in $parent)
+                        <option value="${parent.id}">${parent.menu_name}</option>
+                        #end
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Sort</label>
+                <div class="col-sm-3"><input type="text" name="sort"  class="form-control"></div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <a href="create.jsp" class="btn btn-info">New</a>
+                    <input type="submit" value="Save" class="btn btn-primary">
+                    <input type="button" value="Cancel" class="btn btn-default" onclick="history.go(-1)">
+                </div>
+            </div>
+        </form>
+        ${form_script}
     </div>
     <hr class="border-double my-4 brc-secondary-l2" />
     <script>
