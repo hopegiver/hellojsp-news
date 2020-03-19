@@ -25,8 +25,11 @@
 
 		<link rel="stylesheet" type="text/css" href="/admin-source/node_modules/basictable/basictable.css">
 
+		<link rel="stylesheet" type="text/css" href="/admin-source/tree/css/bootstrap-treeview.css">
 
-		<link rel="stylesheet" type="text/css" href="/admin-source/application/views/default/pages/partials/page-login/@page-style.css">
+        <link rel="stylesheet" type="text/css" href="/admin-source/node_modules/jqtree/jqtree.css">
+
+        <link rel="stylesheet" type="text/css" href="/admin-source/application/views/default/pages/partials/page-login/@page-style.css">
 		<link rel="stylesheet" type="text/css" href="/admin-source/application/views/default/pages/partials/tables-basic/@page-style.css">
 
 	</head>
@@ -139,7 +142,7 @@
                                     -->
                                 </li>
                                 <li class="nav-item #if(${pageTitle} == 'dashboard') active #end">
-                                    <a href="/admin/dashboard.jsp" class="nav-link">
+                                    <a href="/admin/index.jsp" class="nav-link">
                                         <i class="nav-icon fa fa-tachometer-alt nav-icon-round bgc-primary-tp1"></i>
                                         <span class="nav-text fadeable">
                                             <span>Dashboard</span>
@@ -226,12 +229,18 @@
 
 		<script type="text/javascript" src="/admin-source/node_modules/basictable/jquery.basictable.js"></script>
 
-
 		<script type="text/javascript" src="/admin-source/dist/js/ace.js"></script>
 
 		<script type="text/javascript" src="/admin-source/application/js/src/fileinput.js"></script>
 
         <script type="text/javascript" src="/admin-source/assets/js/demo.js"></script>
+
+
+        <script type="text/javascript" src="/admin-source/tree/js/bootstrap-treeview.js"></script>
+
+        <script type="text/javascript" src="/admin-source/tree/js/jquery.js"></script>
+
+        <script type="text/javascript" src="/admin-source/node_modules/jqtree/tree.jquery.js"></script>
 
 		<script type="text/javascript" src="/admin-source/node_modules/inputmask/dist/jquery.inputmask.js"></script>
 
@@ -242,6 +251,7 @@
 		<script type="text/javascript" src="/admin-source/application/views/default/pages/partials/form-editor/@page-script.js"></script>
 		<script type="text/javascript" src="/admin-source/application/views/default/pages/partials/form-fileupload/@page-script.js"></script>
 		<script type="text/javascript" src="/admin-source/application/views/default/pages/partials/tables-basic/@page-script.js"></script>
+        <script type="text/javascript" src="/admin-source/application/views/default/pages/partials/treeview/@page-script.js"></script>
 		</div>
 	</body>
 </html>

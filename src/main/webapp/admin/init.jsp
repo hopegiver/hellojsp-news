@@ -5,6 +5,8 @@ Hello m = new Hello(request, response, out);
 Form f = new Form();
 f.setRequest(request);
 
+AES a = new AES();
+
 Page p = new Page();
 p.setWriter(out);
 p.setVar("m", m);
@@ -23,7 +25,6 @@ if(auth.validate()) {
 }
 
 	if(userId == null){
-		m.jsAlert("Need to login");
 		m.jsReplace("/admin/login.jsp", "window");
 	}
 

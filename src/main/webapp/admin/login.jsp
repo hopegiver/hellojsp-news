@@ -16,8 +16,7 @@ UserDao user = new UserDao();
 	    	auth.put("user_id", f.get("login_id"));
 			auth.save();
 			
-			m.jsAlert("Login success");
-			m.jsReplace("dashboard.jsp");
+			m.jsReplace("index.jsp");
 		} else {
 			m.jsError("id or password is not correct.");
 			auth.destroy();

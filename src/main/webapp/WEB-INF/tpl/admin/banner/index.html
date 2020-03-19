@@ -38,7 +38,9 @@
 					<td><a href="read.jsp?id=${item.id}">${item.id}</a></td>
 					<td><a href="read.jsp?id=${item.id}">${item.title}</a></td>
 					<td>${item.content}</td>
-					<td><a href="read.jsp?id=${item.id}">${item.photo_name}</a></td>
+					<td>
+						<img src="/uploads/${item.photo_name}" alt="image" width="100">
+					</td>
 					<td>${item.reg_date}</td>
 					<td>
 						<a href="read.jsp?id=${item.id}" class="btn radius-1 btn-sm btn-brc-tp btn-outline-default btn-h-outline-primary btn-a-outline-primary btn-text-primary"><i class="fa fa-eye"></i> </a>

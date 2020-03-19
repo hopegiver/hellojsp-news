@@ -12,7 +12,7 @@ if(!info.next()) { m.jsError("No Data"); return; }
 
 //Step4
 f.addElement("login_id", info.s("login_id"), "title:'login_id', required:true");
-f.addElement("passwd", info.s("passwd"), "title:'passwd', required:true");
+f.addElement("passwd",  "", "title:'passwd', required:true");
 f.addElement("nickname", info.s("nickname"), "title:'nickname', required:true");
 f.addElement("email", info.s("email"), "title:'email', required:true");
 f.addElement("photo_url", info.s("photo_url"), "title:'photo_url'");

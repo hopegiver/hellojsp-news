@@ -14,9 +14,9 @@
 				<label class=" col-md-2">Latest</label>
 				<div class="col-md-9">
 					#if(${info.latest} == "Y")
-					Yes
+						Yes
 					#else
-					No
+						No
 					#end
 				</div>
 				<label class=" col-md-2">Type: </label>
@@ -28,7 +28,9 @@
 				<label class=" col-md-2">More News: </label>
 				<div class="col-md-9">${info.long_news}</div>
 				<label class=" col-md-2">Photo: </label>
-				<div class="col-md-9">${info.photo_name}</div>
+				<div class="col-md-9">
+					<img src="/uploads/${info.photo_name}" alt="image" width="200" style="padding-bottom: 20px">
+				</div>
 				<label class=" col-md-2">Video URL: </label>
 				<div class="col-md-9">${info.video_url}</div>
 				<label class=" col-md-2">Date: </label>

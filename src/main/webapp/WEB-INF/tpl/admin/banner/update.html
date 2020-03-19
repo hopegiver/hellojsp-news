@@ -23,9 +23,11 @@
 				<div class="form-group">
 					<label class="control-label col-sm-2">File</label>
 					<div class="col-sm-5">
+						<img src="/uploads/${info.photo_name}" alt="image" width="200" style="padding-bottom: 20px">
 						<input type="file" name="att_file" class="form-control">
 						<!--#if($info.att_file_name != '')-->
-						${info.photo_name} <label class="label label-danger">Delete</label> <input type="checkbox" name="photo_del" value="Y">
+						${info.photo_name} <label class="btn btn-sm btn-danger btn-wide" style="margin-left: 100px; margin-top: 5px">Delete</label>
+						<input type="checkbox" class="input-lg bgc-blue" name="photo_del" value="Y">
 						<!--#end-->
 					</div>
 				</div>
