@@ -16,7 +16,7 @@ jQuery(function($) {
     var categoryTree = $('#id-jqtree-categories');
     categoryTree.tree({
         data: categoryData,
-        autoOpen: false,
+        autoOpen: true,
         useContextMenu: false,
 
         closedIcon : $('<i class="bgc-white w-2 far fa-plus-square text-grey-l1 text-110"></i>'),
@@ -43,14 +43,9 @@ jQuery(function($) {
 
     categoryTree.on( 'tree.click', function(e) {
         // Disable single selection
-        e.preventDefault();
+        //e.preventDefault();
 
         var selectedNode = e.node;
-        // alert(selectedNode.id);
-        var url = window.location.pathname;
-
-        location.replace(url + "?id=" + selectedNode.id);
-
         if (selectedNode.id === undefined || selectedNode.children.length > 0) {
             return;
         }
@@ -71,6 +66,15 @@ jQuery(function($) {
             var icon = $(selectedNode.element).find('.deselected-icon');
             $(selectedIcon).insertAfter(icon);
             icon.remove();
+        }
+    });
+
+    categoryTree.on( 'tree.click', function(e) {
+        var selectedNode = e.node;
+        if (selectedNode.id != 0) {
+            var url = window.location.pathname;
+
+            location.replace(url + "?id=" + selectedNode.id);
         }
     });
 
