@@ -79,7 +79,8 @@
     </div>
     <hr class="border-double my-4 brc-secondary-l2" />
     <script>
-    var categoryData = [
+        id = ${id};
+        var categoryData = [
     #foreach($item in $menuInfo)
         #if(${item.parent_id} == 0)
             {
@@ -90,17 +91,7 @@
             #if(${item.id} == ${subItem.parent_id} && ${subItem.parent_id} > 0)
             {
                 id: ${subItem.id},
-                name: "${subItem.menu_name}",
-                children: [
-                    #foreach($thirdSubItem in $thirdSubMenu)
-                        #if(${thirdSubItem.parent_id} == ${subItem.id})
-                            {
-                                id: ${thirdSubItem.id},
-                                name: "${thirdSubItem.menu_name}"
-                            },
-                        #end
-                    #end
-            ]
+                name: "${subItem.menu_name}"
             },
         #end
         #end
@@ -109,12 +100,7 @@
         #end
     #end
     ];
-    var id = ${id};
 
-    function myFunction(url) {
-        var deleteUrl = url + "?id=" + id;
-        var myWindow = window.open(deleteUrl, "", "width=700,height=300");
-    }
     $('#delete').click(function(){
         var checkstr =  confirm('Are you sure you want to delete this menu?');
         if(checkstr == true){
@@ -124,6 +110,82 @@
             return false;
         }
     });
+
+        var selectedIcon =
+            '<span class="selected-icon d-inline-block text-center border-1 bgc-warning px-1px mx-1 text-70 pb-1px radius-2px">\
+                <i class="w-2 fa fa-check text-white"></i>\
+            </span>';
+
+        var deselectedIcon =
+            '<span class="deselected-icon d-inline-block text-center border-1 bgc-white brc-secondary-m3 px-1px mx-1 text-70 pb-1px radius-2px">\
+                <i class="w-2 fa fa-times text-orange-l4"></i>\
+            </span>';
+
+
+        var categoryTree = $('#id-jqtree-categories');
+        categoryTree.tree({
+            data: categoryData,
+            autoOpen: true,
+            useContextMenu: false,
+
+            closedIcon : $('<i class="bgc-white w-2 far fa-plus-square text-grey-l1 text-110"></i>'),
+            openedIcon : $('<i class="bgc-white w-2 far fa-minus-square text-default-d2 text-110"></i>'),
+
+            onCreateLi: function(node, $li, is_selected) {
+                // insert the icon
+                var title = $li.find('.jqtree-title');
+                if(node.children.length == 0) {
+                    title.addClass('text-grey-d2 text-95');
+                    if( is_selected ) {
+                        $(selectedIcon).insertBefore(title);
+                    }
+                    else {
+                        $(deselectedIcon).insertBefore(title);
+                    }
+                }
+                else {
+                    title.addClass('text-secondary-d3 font-italic');
+                }
+                $li.find('.jqtree-element').addClass('bgc-h-warning-l3 radius-1');
+            }
+        });
+
+        categoryTree.on( 'tree.click', function(e) {
+            // Disable single selection
+            //e.preventDefault();
+
+            var selectedNode = e.node;
+            if (selectedNode.id === undefined || selectedNode.children.length > 0) {
+                return;
+            }
+
+            if( id == selectedNode.id ) {
+                //if already selected, deselect it
+                categoryTree.tree('removeFromSelection', selectedNode);
+
+                //insert deselectedIcon and remove .selected-icon
+                var icon = $(selectedNode.element).find('.selected-icon');
+                $(deselectedIcon).insertAfter(icon);
+                icon.remove();
+            }
+            else {
+                categoryTree.tree('addToSelection', selectedNode);
+
+                //insert selectedIcon and remove .deselected-icon
+                var icon = $(selectedNode.element).find('.deselected-icon');
+                $(selectedIcon).insertAfter(icon);
+                icon.remove();
+            }
+        });
+
+        categoryTree.on( 'tree.click', function(e) {
+            var selectedNode = e.node;
+            if (selectedNode.id != 0) {
+                var url = window.location.pathname;
+
+                location.replace(url + "?id=" + selectedNode.id);
+            }
+        });
 
     </script>
 </div>
