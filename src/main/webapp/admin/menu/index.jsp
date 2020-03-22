@@ -8,7 +8,7 @@
 
         DataSet subMenu = menu.find("status != -1 AND parent_id != 0", "id, menu_name, module, module_id, sort, parent_id, reg_date", "sort");
 
-        DataSet thirdSubMenu = menu.find("status != -1 AND parent_id != 0", "id, menu_name, module, module_id, sort, parent_id, reg_date", "sort");
+//        DataSet thirdSubMenu = menu.find("status != -1 AND parent_id != 0", "id, menu_name, module, module_id, sort, parent_id, reg_date", "sort");
 
         while(subMenu.next()) {
             subMenu.put("reg_date", m.time("yyyy-MM-dd", subMenu.s("reg_date")));
@@ -18,7 +18,7 @@
             menuInfo.put("reg_date", m.time("yyyy-MM-dd", menuInfo.s("reg_date")));
         }
 
-        DataSet parent = menu.find("status != -1");
+        DataSet parent = menu.find("status != -1 AND parent_id = 0");
 
         int id = m.reqInt("id");
         int del = m.reqInt("del");
@@ -100,7 +100,7 @@
         p.setBody("admin/menu/index");
         p.setVar("menuInfo", menuInfo);
         p.setVar("subMenu", subMenu);
-        p.setVar("thirdSubMenu", thirdSubMenu);
+//        p.setVar("thirdSubMenu", thirdSubMenu);
         p.setVar("info", info);
         p.setVar("id", id);
         p.setVar("parent", parent);
