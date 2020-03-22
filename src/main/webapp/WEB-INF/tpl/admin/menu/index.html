@@ -9,7 +9,7 @@
         </h1>
     </div>
     <div class="row" style="padding-bottom: 50px">
-        <div class="col-12 col-md-6 mt-3 mt-md-0">
+        <div class="col-12 col-md-5 mt-3 mt-md-0">
             <div class="card border-0">
                 <div class="card-header bgc-default-d2">
                     <h3 class="card-title text-130 text-white">
@@ -21,18 +21,26 @@
                 </div>
             </div>
         </div>
-    <div class="col-6">
+    <div class="col-12 col-md-7 mt-3 mt-md-0">
         <form name="form1" method="post" class="form-horizontal" enctype="multipart/form-data">
-            <div class="form-group">
-                <label class="control-label col-sm-6">Module</label>
-                <div class="col-sm-12"><input type="text" name="module" class="form-control"></div>
+            <div class="form-group row">
+                <div class="col-sm-3 col-form-label text-sm-right pr-0">
+                    <label class="control-label col-sm-12">Module: </label>
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" name="module" class="form-control">
+                </div>
             </div>
-            <div class="form-group">
-                <label class="control-label col-sm-6">Menu Name</label>
-                <div class="col-sm-12"><input type="text" name="menu_name"  class="form-control"></div>
+            <div class="form-group row">
+                <div class="col-sm-3 col-form-label text-sm-right pr-0">
+                    <label class="control-label col-sm-12">Menu Name: </label>
+                </div>
+                <div class="col-sm-6"><input type="text" name="menu_name"  class="form-control"></div>
             </div>
-            <div class="form-group">
-                <label class="control-label col-sm-6">Module Id</label>
+            <div class="form-group row">
+                <div class="col-sm-3 col-form-label text-sm-right pr-0">
+                    <label class="control-label col-sm-12">Module id: </label>
+                </div>
                 <div class="col-sm-5">
                     <select class="form-control ace-select text-dark-m1 bgc-default-l5 bgc-h-warning-l3  brc-default-m3 brc-h-warning-m1" name="module_id">
                         <option value="">Select</option>
@@ -45,8 +53,10 @@
                     </select>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="control-label col-sm-6">Parent Id</label>
+            <div class="form-group row">
+                <div class="col-sm-3 col-form-label text-sm-right pr-0">
+                    <label class="control-label col-sm-12">Parent id: </label>
+                </div>
                 <div class="col-sm-6">
                     <select class="form-control ace-select text-dark-m1 bgc-default-l5 bgc-h-warning-l3  brc-default-m3 brc-h-warning-m1" name="parent_id" id="select">
                         <option value="0">Select</option>
@@ -56,21 +66,19 @@
                     </select>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2">Sort</label>
+            <div class="form-group row">
+                <div class="col-sm-3 col-form-label text-sm-right pr-0">
+                    <label class="control-label col-sm-12">Sort: </label>
+                </div>
                 <div class="col-sm-3"><input type="text" name="sort"  class="form-control"></div>
             </div>
 
-            <div class="form-group">
-                <div class="row">
+            <div class="form-group row" style="text-align: center">
                 <div class="col-sm-offset-2 col-sm-9">
                     <a href="index.jsp" class="btn btn-info">New</a>
                     <input type="submit" value="Save" class="btn btn-success">
                     <input type="button" value="Cancel" class="btn btn-default" onclick="history.go(-1)">
-                </div>
-                <div class="col-sm-offset-2 col-sm-2">
                     <button id="delete" class="btn btn-danger">Delete</button>
-                </div>
                 </div>
             </div>
         </form>
