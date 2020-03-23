@@ -18398,7 +18398,7 @@ li.jqtree_common::before {
   content: "";
   position: absolute;
   top: 0.925rem;
-  left: calc(-1rem + 2px);
+  left: calc(-1rem + 16px);
   border-top: 1px dotted #67b2dd;
   height: 1px;
   width: 1.125rem;
