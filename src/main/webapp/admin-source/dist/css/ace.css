@@ -18361,7 +18361,7 @@ ul.jqtree_common::before {
   content: "";
   position: absolute;
   top: -1.125rem;
-  bottom: 0;
+  bottom: 12px;
   left: 0;
   width: 0;
   border-left: 1px dotted #67b2dd;

@@ -18,8 +18,7 @@ UserDao user = new UserDao();
 			
 			m.jsReplace("index.jsp");
 		} else {
-			m.jsError("id or password is not correct.");
-			auth.destroy();
+			m.jsError("User id or password is incorrect.");
 		}
 		return;
 		
