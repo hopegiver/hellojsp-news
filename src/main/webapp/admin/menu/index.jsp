@@ -36,7 +36,6 @@
                         return;
                 } else {
                         if(!info.next()) { m.jsError("No Data"); return; }
-
                         f.addElement("module", info.s("module"), "title:'module'");
                         f.addElement("menu_name", info.s("menu_name"), "title:'menu_name', required:true");
                         f.addElement("module_id", info.s("module_id"), "title:'module_id'");
