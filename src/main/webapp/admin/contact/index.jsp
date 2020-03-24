@@ -3,6 +3,7 @@
 
         //Step1
       ContactDao contact = new ContactDao();
+      NewsDao news = new NewsDao();
 
         //Step2
         f.addElement("s_keyword", null, null);
@@ -22,6 +23,8 @@
         while(list.next()) {
             list.put("reg_date", m.time("yyyy-MM-dd", list.s("reg_date")));
         }
+
+        DataSet newsPhoto = news.find("status != -1", "photo_name, id");
         pageTitle = "contact";
 
         //Step4
@@ -29,6 +32,7 @@
         p.setLayout("admin");
         p.setBody("admin/contact/index");
         p.setVar("list", list);
+        p.setVar("newsPhoto", newsPhoto);
         p.setVar("total_cnt", lm.getTotalNum());
         p.setVar("pagebar", lm.getPaging());
         p.setVar("form_script", f.getScript());

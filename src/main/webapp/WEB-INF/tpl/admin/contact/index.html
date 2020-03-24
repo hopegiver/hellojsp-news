@@ -23,6 +23,7 @@
 				<thead class="text-dark-m3 bgc-grey-l4">
 				<tr class="bgc-success-m1 text-white">
 					<th>ID</th>
+					<th>News Id</th>
 					<th>First Name</th>
 					<th>Last name</th>
 					<th>Phone</th>
@@ -35,6 +36,16 @@
 				#foreach($item in $list)
 				<tr>
 					<td><a href="read.jsp?id=${item.id}">${item.id}</a></td>
+					<td>
+							#foreach($photo in $newsPhoto)
+								#if(${photo.id} == ${item.news_id})
+								<img src="/uploads/${photo.photo_name}" alt="image" width="100">
+								#end
+							#end
+						#if(${item.news_id} == "")
+							Main page comment
+						#end
+					</td>
 					<td><a href="read.jsp?id=${item.id}">${item.first_name}</a></td>
 					<td><a href="read.jsp?id=${item.id}">${item.last_name}</a></td>
 					<td>${item.phone}</td>

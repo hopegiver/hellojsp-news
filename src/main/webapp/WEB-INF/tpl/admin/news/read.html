@@ -43,6 +43,53 @@
 				</div>
 			</dl>
 		</div>
+		</div>
 	</div>
 	<hr class="border-double my-4 brc-secondary-l2" />
+		<div class="row" style="margin-bottom: 20px;">
+			<div class="col-12" style="text-align: right">
+				<form name="form1" method="get" class="form-inline">
+					<input type="text" name="s_keyword" class="form-control">
+					<input class="btn btn-info" type="submit" value="Search">
+				</form>
+				${form_script}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<table class="table table-striped-success table-borderless text-dark-m1" id="responsive-table">
+					<thead class="text-dark-m3 bgc-grey-l4">
+					<tr class="bgc-success-m1 text-white">
+						<th>ID</th>
+						<th>First Name</th>
+						<th>Last name</th>
+						<th>Phone</th>
+						<th>Email</th>
+						<th>Title</th>
+						<th width="11%">Date</th>
+						<th width="19%">Manage</th>
+					</tr>
+					</thead>
+					#foreach($item in $list)
+					<tr>
+						<td><a href="/admin/contact/read.jsp?id=${item.id}">${item.id}</a></td>
+						<td><a href="/admin/contact/read.jsp?id=${item.id}">${item.first_name}</a></td>
+						<td><a href="/admin/contact/read.jsp?id=${item.id}">${item.last_name}</a></td>
+						<td>${item.phone}</td>
+						<td>${item.email}</td>
+						<td>${item.content}</td>
+						<td>${item.reg_date}</td>
+						<td>
+							<a href="/admin/contact/read.jsp?id=${item.id}" class="btn radius-1 btn-sm btn-brc-tp btn-outline-default btn-h-outline-primary btn-a-outline-primary btn-text-primary"><i class="fa fa-eye"></i> </a>
+							<a href="/admin/contact/delete.jsp?id=${item.id}" class="btn radius-1 btn-sm btn-brc-tp btn-outline-default btn-h-outline-danger btn-a-outline-danger btn-text-danger"><i class="fa fa-trash-alt"></i> </a>
+						</td>
+					</tr>
+					#end
+				</table>
+				<div class="pagination justify-content-center">
+					${pagebar}
+				</div>
+			</div>
+		</div>
+</div>
 </div>

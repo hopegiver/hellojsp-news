@@ -63,7 +63,6 @@
 	if(!info.next()) { m.jsError("No Data"); return; }
 
 	p.setBody("front/index");
-	p.setVar("form_script", f.getScript());
 	p.setVar("menuInfo", menuInfo);
 //        p.setVar("subMenu", subMenu);
 	p.setVar("bannerList", bannerList);

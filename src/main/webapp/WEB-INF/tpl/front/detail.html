@@ -43,6 +43,47 @@
             </div>
         </div>
     </div>
+    <div class="section db">
+        <div class="container">
+            <div class="section-title text-center">
+                <h3>Comment</h3>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="contact_form">
+                        <div id="message"></div>
+                        <form id="form1" class="row" method="post">
+                            <div class="row-fluid">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <input type="text" name="first_name" class="form-control" placeholder="First Name">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <input type="text" name="last_name" class="form-control" placeholder="Last Name">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <input type="email" name="email" class="form-control" placeholder="Your Email">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <input type="text" name="phone" class="form-control" placeholder="Your Phone">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <input type="text" name="subject" class="form-control" placeholder="Title">
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <textarea class="form-control" name="content" rows="6" placeholder="Why you are contacting us?"></textarea>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center">
+                                    <button type="submit" value="Save" class="btn btn-light btn-radius btn-brd grd1 btn-block">Send</button>
+                                </div>
+                            </div>
+                        </form>
+                        ${form_script}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     #parse("layout/footer.html")
 </div>
 </body>
