@@ -6,7 +6,7 @@ BlogDao blog = new BlogDao();
 //Step2
 f.addElement("subject", null, "title:'subject', required:true");
 f.addElement("content", null, "title:'content', required:true");
-f.addElement("att_file", null, "title:'file'");
+f.addElement("att_file_name", null, "title:'att_file_name'");
 
 //Step3
 if(m.isPost() && f.validate()) {
@@ -14,10 +14,9 @@ if(m.isPost() && f.validate()) {
 	blog.item("subject", f.get("subject"));
 	blog.item("content", f.get("content"));
 
-	File attFile = f.saveFile("att_file", UploadPath);
+	File attFile = f.saveFile("att_file_name", UploadPath);
 	if(attFile != null) {
-		blog.item("att_file_name", f.getFileName("att_file"));
-		blog.item("att_file_code", attFile.getName());
+		blog.item("att_file_name", f.getFileName("att_file_name"));
 	}
 	blog.item("reg_date", m.time("yyyyMMddHHmmss"));
 	blog.item("status", 1);

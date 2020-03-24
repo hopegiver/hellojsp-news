@@ -14,7 +14,7 @@ if(!info.next()) { m.jsError("No Data"); return; }
 //Step4
 f.addElement("subject", info.s("subject"), "title:'subject', required:true");
 f.addElement("content", info.s("content"), "title:'content', required:true");
-f.addElement("att_file_name", info.s("att_file_name"), "title:'file'");
+f.addElement("att_file_name", info.s("att_file_name"), "title:'att_file_name'");
 
 //Step5
 if(m.isPost() && f.validate()) {
@@ -24,17 +24,14 @@ if(m.isPost() && f.validate()) {
 
 	if("Y".equals(f.get("att_file_del"))) {
 		blog.item("att_file_name", "");
-		blog.item("att_file_code", "");
-		info.put("att_file_code", "");
 		m.delFile(UploadPath + "/" + info.s("att_file_name"));
 	}
 	
-	File attFile = f.saveFile("att_file", UploadPath);
+	File attFile = f.saveFile("att_file_name", UploadPath);
 	if(attFile != null) {
-		blog.item("att_file_name", f.getFileName("att_file"));
-		blog.item("att_file_code", attFile.getName());
+		blog.item("att_file_name", f.getFileName("att_file_name"));
 
-		if(!"".equals(info.s("att_file_code"))) {
+		if(!"".equals(info.s("att_file_name"))) {
 			m.delFile(UploadPath + "/" + info.s("att_file_name"));
 		}
 	}

@@ -161,7 +161,6 @@
             <div class="section-title text-center">
                 <h3>Gallery</h3>
             </div>
-
             <!--			<div class="gallery-menu row">-->
             <!--				<div class="col-md-12">-->
             <!--					<div class="button-group filter-button-group text-center">-->
@@ -202,7 +201,7 @@
 				<div class="col-md-4 col-sm-6 col-lg-4">
 					<div class="post-box">
 						<div class="post-thumb">
-							<img src="/uploads/${blogList.att_file_name}" class="img-responsive" alt="post-img" />
+							<img src="/uploads/${blogList.att_file_name}" width="400" height="300" style="overflow: hidden" class="img-responsive"  alt="post-img" />
 							<div class="date">
 								<span>${blogList.reg_date}</span>
 							</div>
@@ -213,7 +212,9 @@
                                 <li>by admin</li>
                                 <li><a href="#"><b> Comments</b></a></li>
                             </ul>
-							<p>${blogList.content}</p>
+                            <div style="height: 150px; overflow: hidden; text-overflow: ellipsis;">
+                                <p>${blogList.content}</p>
+                            </div>
 						</div>
 					</div>
 				</div>
