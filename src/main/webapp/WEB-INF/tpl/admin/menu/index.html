@@ -142,9 +142,10 @@
             onCreateLi: function(node, $li, is_selected) {
                 // insert the icon
                 var title = $li.find('.jqtree-title');
+                var selectedNode = node;
                 if(node.children.length == 0) {
                     title.addClass('text-grey-d2 text-95');
-                    if( is_selected ) {
+                    if(selectedNode.id == id ) {
                         $(selectedIcon).insertBefore(title);
                     }
                     else {
@@ -159,34 +160,6 @@
         });
 
         categoryTree.on( 'tree.click', function(e) {
-            // Disable single selection
-            //e.preventDefault();
-
-            var selectedNode = e.node;
-            if (selectedNode.id === undefined || selectedNode.children.length > 0) {
-                return;
-            }
-
-            if( id == selectedNode.id ) {
-                //if already selected, deselect it
-                categoryTree.tree('removeFromSelection', selectedNode);
-
-                //insert deselectedIcon and remove .selected-icon
-                var icon = $(selectedNode.element).find('.selected-icon');
-                $(deselectedIcon).insertAfter(icon);
-                icon.remove();
-            }
-            else {
-                categoryTree.tree('addToSelection', selectedNode);
-
-                //insert selectedIcon and remove .deselected-icon
-                var icon = $(selectedNode.element).find('.deselected-icon');
-                $(selectedIcon).insertAfter(icon);
-                icon.remove();
-            }
-        });
-
-        categoryTree.on( 'tree.click', function(e) {
             var selectedNode = e.node;
             if (selectedNode.id != 0) {
                 var url = window.location.pathname;
@@ -194,6 +167,8 @@
                 location.replace(url + "?id=" + selectedNode.id);
             }
         });
+
+
 
     </script>
 </div>
