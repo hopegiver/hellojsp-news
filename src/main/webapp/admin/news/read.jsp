@@ -29,7 +29,7 @@ info.put("reg_date", m.time("yyyy-MM-dd HH:mm", info.s("reg_date")));
     //Step3
     DataSet list = lm.getDataSet();
     while(list.next()) {
-        list.put("reg_date", m.time("yyyy-MM-dd", list.s("reg_date")));
+        list.put("reg_date", m.time("yyyy-MM-dd hh:mm", list.s("reg_date")));
     }
 
     pageTitle = "news";
