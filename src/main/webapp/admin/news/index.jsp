@@ -13,7 +13,7 @@
         lm.setTable("tb_news a");
         lm.setFields("a.*");
         lm.addWhere("a.status != -1");
-        lm.addSearch("a.user_id, a.subject, a.content", f.get("s_keyword"), "LIKE");
+        lm.addSearch("a.subject, a.short_news, a.long_news", f.get("s_keyword"), "LIKE");
         lm.setOrderBy("a.id DESC");
 
         //Step3
