@@ -3,6 +3,20 @@
 <head>
     #parse("layout/header.html")
 </head>
+<style>
+    .gallery_img {
+        float:  left;
+        width:  400px;
+        height: 300px;
+        background-size: cover;
+    }
+    .main_news_img {
+        float:  left;
+        width:  550px;
+        height: 350px;
+        background-size: cover;
+    }
+</style>
 <body class="politics_version">
 
     <div class="topbar text-center hidden-xs" style="background-color: #fff">
@@ -45,7 +59,7 @@
                 <div class="container">
                     <h1 class="wow fadeInUp animated">${bannerList.title}</h1>
                     <p class="wow fadeInUp animated" data-wow-delay="0.2s">${bannerList.content}</p>
-                    <a data-scroll-nav="6" href="#" class="btn btn-light btn-radius btn-brd grd1">Expression</a>
+                    <a data-scroll-nav="6" href="#" class="btn btn-light btn-radius btn-brd grd1">Contact us</a>
                 </div>
             </div>
         </div>
@@ -83,7 +97,7 @@
                     <div class="service-widget">
                         <div class="post-media_pp wow fadeIn">
                             <a onclick="myFunction('/front/detail.jsp?id=${photoNews.id}')" data-scroll class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-                            <img src="/uploads/${photoNews.photo_name}" alt="" class="img-responsive">
+                            <img src="/uploads/${photoNews.photo_name}" alt="" class="img-responsive main_news_img">
                             <div class="hover-up">
                                 <h3>${photoNews.subject}</h3>
                                 <p>${photoNews.short_news}</p>
@@ -178,7 +192,7 @@
                 #foreach($newsPhoto in $newsPhoto)
                 <div class="col-md-4 col-sm-6 gallery-grid gal_a gal_b">
                     <div class="gallery-single fix">
-                        <img src="/uploads/${newsPhoto.photo_name}" class="img-responsive" alt="Image">
+                        <img src="/uploads/${newsPhoto.photo_name}" class="img-responsive gallery_img" height="400px" alt="Image">
                         <div class="img-overlay">
                             <a onclick="myFunction('/front/detail.jsp?id=${newsPhoto.id}')" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
                         </div>
