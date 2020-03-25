@@ -16,6 +16,12 @@
         height: 350px;
         background-size: cover;
     }
+    .media_img {
+        float:  left;
+        width:  390px;
+        height: 200px;
+        background-size: cover;
+    }
 </style>
 <body class="politics_version">
 
@@ -86,7 +92,7 @@
                 <div class="col-md-6">
                     <div class="post-media wow fadeIn">
                         <img src="/uploads/${latestNews.photo_name}" alt="" class="img-responsive img-rounded">
-                        <a onclick="myFunction('${latestNews.video_url}')" class="playbutton"><i class="flaticon-play-button"></i></a>
+                        <a onclick="myFunction('${latestNews.video_url}')" class="playbutton" style="margin: -20px auto;"><i class="flaticon-play-button"></i></a>
                     </div>
                 </div>
             </div>
@@ -110,10 +116,11 @@
             </div>
         </div>
 
-    <div class="section nopad">
+    <div class="section nopad section lb" >
         <img src="uploads/" alt="" class="img-responsive">
     </div>
-
+    </div>
+    <div class="section lb">
         <div class="container">
             <div class="section-title text-left">
                 <h3>Old News</h3>
@@ -156,10 +163,10 @@
                 <div class="col-md-4">
                     <div class="issuse-wrap2 clearfix">
                         <div class="post-media wow fadeIn">
-                            <img src="/uploads/${item.photo_name}" alt="" class="img-responsive img-rounded">
+                            <img src="/uploads/${item.photo_name}" alt="" class="img-responsive img-rounded media_img">
                             <a onclick="myFunction('${item.video_url}')" class="playbutton"><i class="flaticon-play-button"></i></a>
                         </div>
-                        <h4>"${item.subject}”</h4>
+                        <h4 style="margin-top: 200px">"${item.subject}”</h4>
                         <p>${item.short_news}
                             <button onclick="myFunction('/front/detail.jsp?id=${item.id}')" style="padding: 5px; font-size: 14px" data-scroll class="btn btn-light btn-radius btn-brd grd1">More...</button>
                         </p>
@@ -204,7 +211,7 @@
     </div>
     </div>
 	
-	<div id="blog" data-scroll-index="5" class="section lb" style="padding-top: 0">
+	<div id="blog" data-scroll-index="5" class="section wb" style="padding-top: 0">
 		<div class="container">
 			<div class="section-title text-center">
 				<span>Latest news</span>
