@@ -10,7 +10,9 @@
 
     f.addElement("first_name", null, "title:'first_name', required:true");
     f.addElement("last_name", null, "title:'last_name', required:true");
-    f.addElement("phone", null, "title:'phone', required:true");
+    f.addElement("phone1", null, "title:'phone', required:true");
+    f.addElement("phone2", null, "title:'phone', required:true");
+    f.addElement("phone3", null, "title:'phone', required:true");
     f.addElement("email", null, "title:'email', required:true");
     f.addElement("subject", null, "title:'subject', required:true");
     f.addElement("content", null, "title:'content', required:true");
@@ -18,7 +20,7 @@
         contact.item("news_id", id);
         contact.item("first_name", f.get("first_name"));
         contact.item("last_name", f.get("last_name"));
-        contact.item("phone", f.get("phone"));
+        contact.item("phone", f.glue("-", "phone1, phone2, phone3"));
         contact.item("email", f.get("email"));
         contact.item("subject", f.get("subject"));
         contact.item("content", f.get("content"));

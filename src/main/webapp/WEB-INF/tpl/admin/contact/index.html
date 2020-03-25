@@ -25,12 +25,11 @@
 					<th>ID</th>
 					<th>News Id</th>
 					<th>First Name</th>
-					<th>Last name</th>
-					<th>Phone</th>
+					<th width="12%">Phone</th>
 					<th>Email</th>
 					<th>Title</th>
-					<th width="11%">Date</th>
-					<th width="19%">Manage</th>
+					<th width="12%">Date</th>
+					<th>Manage</th>
 				</tr>
 				</thead>
 				#foreach($item in $list)
@@ -47,10 +46,9 @@
 						#end
 					</td>
 					<td><a href="read.jsp?id=${item.id}">${item.first_name}</a></td>
-					<td><a href="read.jsp?id=${item.id}">${item.last_name}</a></td>
 					<td>${item.phone}</td>
 					<td>${item.email}</td>
-					<td>${item.content}</td>
+					<td>${item.subject}</td>
 					<td>${item.reg_date}</td>
 					<td>
 						<a href="read.jsp?id=${item.id}" class="btn radius-1 btn-sm btn-brc-tp btn-outline-default btn-h-outline-primary btn-a-outline-primary btn-text-primary"><i class="fa fa-eye"></i> </a>

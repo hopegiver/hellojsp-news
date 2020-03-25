@@ -21,7 +21,7 @@
         //Step3
         DataSet list = lm.getDataSet();
         while(list.next()) {
-            list.put("reg_date", m.time("yyyy-MM-dd", list.s("reg_date")));
+            list.put("reg_date", m.time("yyyy-MM-dd hh:ss", list.s("reg_date")));
         }
 
         DataSet newsPhoto = news.find("status != -1", "photo_name, id");
