@@ -13,10 +13,10 @@
 	DataSet photoNews = news.find("status != -1 AND type = 'photo'", " * ", "id DESC", 4);
 	if(!photoNews.next()) { m.jsError("No Data"); return; }
 
-	DataSet oldPhotoNews = news.find("status != -1 AND type = 'photo' AND id <" + (maxIdNum - 6), " * ", "id DESC", 6);
+	DataSet oldPhotoNews = news.find("status != -1", " * ", "id DESC LIMIT 6 OFFSET 6");
 	if(!oldPhotoNews.next()) { m.jsError("No Data"); return; }
 
-	DataSet oldPhotoNewsFirst = news.find("status != -1 AND type = 'photo' AND id <=" + (maxIdNum - 5), " * ", "id DESC", 1);
+	DataSet oldPhotoNewsFirst = news.find("status != -1", " * ", "id DESC LIMIT 1 OFFSET 5");
 	if(!oldPhotoNewsFirst.next()) { m.jsError("No Data"); return; }
 
 	DataSet latestNews = news.find("status != -1 AND latest = 'Y'", " * ", "id DESC", 1);
