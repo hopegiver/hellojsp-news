@@ -32,8 +32,11 @@
 						<img src="/uploads/${info.photo_name}" alt="image" width="200" style="padding-bottom: 20px">
 						<input type="file" name="att_file" class="form-control">
 						<!--#if($info.att_file_name != '')-->
-						${info.photo_name} <label class="btn btn-sm btn-danger btn-wide" style="margin-left: 100px; margin-top: 5px">Delete</label>
-						<input type="checkbox" class="input-lg bgc-blue" name="photo_del" value="Y">
+						${info.photo_name}
+						<div class="col-sm-6 col-form-label text-sm-left pl-0">
+							<label class="btn btn-sm btn-danger btn-wide" style="margin-top: 5px">Delete</label>
+							<input type="checkbox" class="input-lg bgc-blue" name="photo_del" value="Y">
+						</div>
 						<!--#end-->
 					</div>
 				</div>
