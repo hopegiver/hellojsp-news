@@ -23,13 +23,12 @@
 				<thead class="text-dark-m3 bgc-grey-l4">
 				<tr class="bgc-success-m1 text-white">
 					<th>ID</th>
-					<th>News Id</th>
-					<th>First Name</th>
+					<th>News Title</th>
+					<th width="20%">Comment Title</th>
 					<th width="12%">Phone</th>
 					<th>Email</th>
-					<th>Title</th>
 					<th width="12%">Date</th>
-					<th>Manage</th>
+					<th width="7%">Manage</th>
 				</tr>
 				</thead>
 				#foreach($item in $list)
@@ -38,17 +37,16 @@
 					<td>
 							#foreach($photo in $newsPhoto)
 								#if(${photo.id} == ${item.news_id})
-								<img src="/uploads/${photo.photo_name}" alt="image" width="100">
+									<a href="/admin/news/read.jsp?id=${photo.id}">${photo.subject}</a>
 								#end
 							#end
 						#if(${item.news_id} == "")
 							Main page comment
 						#end
 					</td>
-					<td><a href="read.jsp?id=${item.id}">${item.first_name}</a></td>
+					<td><a href="read.jsp?id=${item.id}">${item.subject}</a></td>
 					<td>${item.phone}</td>
 					<td>${item.email}</td>
-					<td>${item.subject}</td>
 					<td>${item.reg_date}</td>
 					<td>
 						<a href="read.jsp?id=${item.id}" class="btn radius-1 btn-sm btn-brc-tp btn-outline-default btn-h-outline-primary btn-a-outline-primary btn-text-primary"><i class="fa fa-eye"></i> </a>

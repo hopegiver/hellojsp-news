@@ -29,13 +29,13 @@
 				<div class="col-md-9">${info.long_news}</div>
 				<label class=" col-md-2">Photo: </label>
 				<div class="col-md-9">
-					<img src="/uploads/${info.photo_name}" alt="image" width="200" style="padding-bottom: 20px">
+					<img src="/uploads/${info.photo_name}" alt="image" id="fullsize" width="200" style="padding-bottom: 20px">
 				</div>
 				<label class=" col-md-2">Video URL: </label>
 				<div class="col-md-9">${info.video_url}</div>
 				<label class=" col-md-2">Date: </label>
 				<div class="col-md-9">${info.reg_date}</div>
-				<div class="col-md-9">
+				<div class="col-sm-7 col-form-label text-sm-center pr-5">
 					<br>
 					<input type="button" value="Back" class="btn btn-default" onclick="history.go(-1)">
 					<a href="update.jsp?id=${info.id}" class="btn btn-primary">Edit</a>

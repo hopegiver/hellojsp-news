@@ -24,7 +24,7 @@
             list.put("reg_date", m.time("yyyy-MM-dd hh:ss", list.s("reg_date")));
         }
 
-        DataSet newsPhoto = news.find("status != -1", "photo_name, id");
+        DataSet newsPhoto = news.find("status != -1", "photo_name, id, subject");
         pageTitle = "contact";
 
         //Step4
