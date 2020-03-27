@@ -65,17 +65,17 @@
 	if(!info.next()) { m.jsError("No Data"); return; }
 
 	p.setBody("front/index");
-	p.setVar("menuInfo", menuInfo);
+	p.setLoop("menuInfo", menuInfo);
 //        p.setVar("subMenu", subMenu);
-	p.setVar("bannerList", bannerList);
-	p.setVar("oldPhotoNews", oldPhotoNews);
+	p.setLoop("bannerList", bannerList);
+	p.setLoop("oldPhotoNews", oldPhotoNews);
 	p.setVar("oldPhotoNewsFirst", oldPhotoNewsFirst);
-	p.setVar("photoNews", photoNews);
-	p.setVar("latestNews", latestNews);
-	p.setVar("mediaNews", mediaNews);
-	p.setVar("blogList", blogList);
-	p.setVar("newsPhoto", newsPhoto);
-	p.setVar("info", info);
+	p.setLoop("photoNews", photoNews);
+	p.setLoop("latestNews", latestNews);
+	p.setLoop("mediaNews", mediaNews);
+	p.setLoop("blogList", blogList);
+	p.setLoop("newsPhoto", newsPhoto);
+	p.setLoop("info", info);
 	p.setVar("form_script", f.getScript());
 	p.print();
 

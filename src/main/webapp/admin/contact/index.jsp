@@ -31,8 +31,8 @@
         //    p.setDebug(out);
         p.setLayout("admin");
         p.setBody("admin/contact/index");
-        p.setVar("list", list);
-        p.setVar("newsPhoto", newsPhoto);
+        p.setLoop("list", list);
+        p.setLoop("newsPhoto", newsPhoto);
         p.setVar("total_cnt", lm.getTotalNum());
         p.setVar("pagebar", lm.getPaging());
         p.setVar("form_script", f.getScript());

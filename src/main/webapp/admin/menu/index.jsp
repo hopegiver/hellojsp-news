@@ -97,10 +97,10 @@
         //    p.setDebug(out);
         p.setLayout("admin");
         p.setBody("admin/menu/index");
-        p.setVar("menuInfo", menuInfo);
-        p.setVar("subMenu", subMenu);
+        p.setLoop("menuInfo", menuInfo);
+        p.setLoop("subMenu", subMenu);
 //        p.setVar("thirdSubMenu", thirdSubMenu);
-        p.setVar("info", info);
+        p.setLoop("info", info);
         p.setVar("id", id);
         p.setVar("parent", parent);
         p.setVar("form_script", f.getScript());
