@@ -1,0 +1,67 @@
+<div class="page-content container" style="margin-left: 0">
+	<div class="page-header">
+		<h1 class="page-title text-primary-d2">
+			Menu
+			<small class="page-info text-secondary-d2">
+				<i class="fa fa-angle-double-right text-80"></i>
+				Admin editable menu add
+			</small>
+		</h1>
+	</div>
+<!--	<div class="row" style="margin-bottom: 20px;">-->
+<!--		<div class="col-9" style="text-align: left;">-->
+<!--			<a href="create.jsp" class="btn btn-info">New</a>-->
+<!--		</div>-->
+<!--		<div class="col-3" style="text-align: right">-->
+<!--			<form name="form1" method="get" class="form-inline" style="padding-left: 30px">-->
+<!--				<input type="text" name="s_keyword" class="form-control">-->
+<!--				<input class="btn btn-info" type="submit" value="Search">-->
+<!--			</form>-->
+<!--			{{form_script}}-->
+<!--		</div>-->
+<!--	</div>-->
+	<div class="row mb-3">
+		<div class="col">
+			<a href="#/add" class="btn btn-small btn-primary">New</a>
+		</div>
+		<div class="col">
+			<form name="form1" method="get" class="form-inline float-right">
+				<input type="text" name="s_keyword" class="form-control">
+				<input class="btn btn-outline-success ml-1" type="submit" value="Search">
+			</form>
+			{{form_script}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<table class="table table-striped-success table-borderless text-dark-m1" id="responsive-table">
+				<thead class="text-dark-m3 bgc-grey-l4">
+				<tr class="bgc-success-m1 text-white">
+					<th>ID</th>
+					<th>Login Id</th>
+					<th>Nick Name</th>
+					<th>Email</th>
+					<th>Manage</th>
+				</tr>
+				</thead>
+				<% _.each(list, function(item) { %>
+				<tr>
+					<td><a href="read.jsp?id=${item.id}">{{item.id}}</a></td>
+					<td><a href="read.jsp?id=${item.id}">{{item.login_id}}</a></td>
+					<td>{{item.nickname}}</td>
+					<td>{{item.email}}</td>
+					<td>
+						<a href="read.jsp?id=${item.id}" class="btn radius-1 btn-sm btn-brc-tp btn-outline-default btn-h-outline-primary btn-a-outline-primary btn-text-primary"><i class="fa fa-eye"></i> </a>
+						<a href="update.jsp?id=${item.id}" class="btn radius-1 btn-sm btn-brc-tp btn-outline-default btn-h-outline-success btn-a-outline-success btn-text-success"><i class="fa fa-pencil-alt"></i> </a>
+						<a href="delete.jsp?id=${item.id}" class="btn radius-1 btn-sm btn-brc-tp btn-outline-default btn-h-outline-danger btn-a-outline-danger btn-text-danger"><i class="fa fa-trash-alt"></i> </a>
+					</td>
+				</tr>
+				<% }) %>
+			</table>
+			<div class="pagination justify-content-center">
+				{{pagebar}}
+			</div>
+		</div>
+	</div>
+	<hr class="border-double my-4 brc-secondary-l2" />
+</div>

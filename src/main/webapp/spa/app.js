@@ -7,8 +7,16 @@ var list = {
 	}
 };
 var menu = {
-	templateUrl: 'tpl/menu.html',
-	dataUrl: 'api/menu.jsp',
+	templateUrl: 'tpl/menu/menu.html',
+	dataUrl: 'api/menu/menu.jsp',
+	submit: function(f) {
+		alert('Error');
+	}
+};
+
+var user = {
+	templateUrl: 'tpl/user/index.html',
+	dataUrl: 'api/user/index.jsp',
 	submit: function(f) {
 		alert('Error');
 	}
@@ -60,7 +68,8 @@ $(document).ready(function() {
 			'/add': add,
 			'/del': del,
 			'/logout': logout,
-			'/menu': menu
+			'/menu': menu,
+			'/user': user
 
 		},
 		error: function(ret) {
