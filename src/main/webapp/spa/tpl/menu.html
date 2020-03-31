@@ -95,30 +95,21 @@
             </div>
         </form>
         {{form_script}}
+        {{menuInfo}}
     </div>
     </div>
     <hr class="border-double my-4 brc-secondary-l2" />
+    <script type="text/javascript" src="/js/spa/underscore.js"></script>
     <script>
-        id = ${id};
+        id = {id};
+        debugger;
+        var menuInfo = {menuInfo};
+        var subMenu = {subMenu};
         var categoryData = [
-    #foreach($item in $menuInfo)
-        #if(${item.parent_id} == 0)
-            {
-        id: ${item.id},
-        name: "${item.menu_name}",
-        children: [
-            #foreach($subItem in $subMenu)
-            #if(${item.id} == ${subItem.parent_id} && ${subItem.parent_id} > 0)
-            {
-                id: ${subItem.id},
-                name: "${subItem.menu_name}"
-            },
-        #end
-        #end
-        ]
-            },
-        #end
-    #end
+        Object.keys(menuInfo).forEach((key, index) => {
+            id: index.id
+            name: index.menu_name
+        })
     ];
 
 

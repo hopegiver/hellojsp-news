@@ -91,7 +91,6 @@
                 }
         }
 
-
         //Step4
         pageTitle = "menu";
         p.setLoop("menuInfo", menuInfo);
@@ -101,6 +100,6 @@
         p.setLoop("parent", parent);
         p.setVar("form_script", f.getScript());
         p.setVar("pageTitle", pageTitle);
-        p.print(1);
+        p.print();
 
 %>
