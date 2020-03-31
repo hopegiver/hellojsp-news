@@ -6,6 +6,13 @@ var list = {
 		alert('회원 검색폼 서브밋');
 	}
 };
+var menu = {
+	templateUrl: 'tpl/menu.html',
+	dataUrl: 'api/menu.jsp',
+	submit: function(f) {
+		alert('Error');
+	}
+};
 
 var edit = {
 	templateUrl: 'tpl/edit.html',
@@ -52,7 +59,9 @@ $(document).ready(function() {
 			'/view': view,
 			'/add': add,
 			'/del': del,
-			'/logout': logout
+			'/logout': logout,
+			'/menu': menu
+
 		},
 		error: function(ret) {
 			if(ret.error == 100) {

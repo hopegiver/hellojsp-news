@@ -12,6 +12,9 @@ p.setVar("m", m);
 Message msg = new Message();
 p.setVar("msg", msg);
 
+Json j = new Json();
+j.setWriter(out);
+
 String userId = null;
 String UploadPath = "E:/Intel-Workspace/hellojsp-news/src/main/webapp/uploads";
 
