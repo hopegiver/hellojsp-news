@@ -34,6 +34,8 @@
 
         <link rel="stylesheet" type="text/css" href="/admin-source/node_modules/select2/dist/css/select2.css">
 
+        <link rel="stylesheet" type="text/css" href="/admin-source/node_modules/bootstrap-select/dist/css/bootstrap-select.css">
+
         <script type="text/javascript" src="/admin-source/node_modules/jqtree/tree.jquery.js"></script>
 
         <script type="text/javascript" src="/admin-source/application/js/src/fileinput.js"></script>
@@ -109,7 +111,7 @@
                     <div class="navbar-nav">
                         <button style="padding: 0">
                             <form name="form1" action="/admin/language.jsp" method="post" class="form-horizontal" enctype="multipart/form-data">
-                                <select name="language" class="select2 form-control" onchange="this.form.submit()">
+                                <select name="language" data-style="btn-outline-primary btn-h-outline-primary btn-a-outline-primary" class="form-control w-100" onchange="this.form.submit()">
                                     <option value="">language</option>
                                     <option value="EN">EN</option>
                                     <option value="KO">KO</option>
@@ -137,12 +139,6 @@
 										<div class="dropdown-header">
 											Welcome, Admin
 										</div>
-                                        <div class="dropdown-header">
-                                            Welcome, Admin
-                                        </div>
-                                        <div class="dropdown-header">
-                                            Welcome, Admin
-                                        </div>
 										<div class="dropdown-divider"></div>
 									</div>
 
