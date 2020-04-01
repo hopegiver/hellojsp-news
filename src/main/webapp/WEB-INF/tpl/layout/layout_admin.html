@@ -14,15 +14,13 @@
         <link rel="stylesheet" type="text/css" href="/admin-source/node_modules/@fortawesome/fontawesome-free/css/brands.css">
         <link rel="stylesheet" type="text/css" href="/admin-source/node_modules/@fortawesome/fontawesome-free/css/solid.css">
 
-        <script type="text/javascript" src="/admin-source/node_modules/jquery/dist/jquery.js"></script>
 
         <link rel="stylesheet" type="text/css" href="/admin-source/dist/css/ace-font.css">
+        <link rel="stylesheet" type="text/css" href="/admin-source/node_modules/jqtree/jqtree.css">
 
-		<link rel="icon" type="image/png" href="/admin-source/assets/favicon.png" />
+        <link rel="icon" type="image/png" href="/admin-source/assets/favicon.png" />
 
 		<link rel="stylesheet" type="text/css" href="/admin-source/node_modules/basictable/basictable.css">
-
-        <link rel="stylesheet" type="text/css" href="/admin-source/node_modules/jqtree/jqtree.css">
 
         <link rel="stylesheet" type="text/css" href="/admin-source/dist/css/ace.css">
 
@@ -35,6 +33,8 @@
         <link rel="stylesheet" type="text/css" href="/admin-source/node_modules/select2/dist/css/select2.css">
 
         <link rel="stylesheet" type="text/css" href="/admin-source/node_modules/bootstrap-select/dist/css/bootstrap-select.css">
+
+        <script type="text/javascript" src="/admin-source/node_modules/jquery/dist/jquery.js"></script>
 
         <script type="text/javascript" src="/admin-source/node_modules/jqtree/tree.jquery.js"></script>
 
@@ -164,7 +164,7 @@
                         <div class="ace-scroll flex-grow-1" ace-scroll>
                             <ul class="nav has-active-border" role="navigation" aria-label="Main">
                                 <li class="nav-item-caption">
-                                    <span class="fadeable pl-3">MAIN</span>
+                                    <span class="fadeable pl-3">$msg.get("main")</span>
                                     <span class="fadeinable mt-n2 text-125">&hellip;</span>
                                     <!--
                                         OR something like the following (with .hideable text)
