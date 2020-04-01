@@ -102,7 +102,7 @@
 //        p.setVar("thirdSubMenu", thirdSubMenu);
         p.setLoop("info", info);
         p.setVar("id", id);
-        p.setVar("parent", parent);
+        p.setLoop("parent", parent);
         p.setVar("form_script", f.getScript());
         p.setVar("pageTitle", pageTitle);
         p.print();
