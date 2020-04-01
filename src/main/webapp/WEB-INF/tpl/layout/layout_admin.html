@@ -67,8 +67,7 @@
 
 					<a class="navbar-brand text-white" href="/">
 						<i class="fa fa-leaf"></i>
-						<span>EL Politic</span>
-						<span>App</span>
+						<span>$msg.get("title")</span>
 					</a><!-- /.navbar-brand -->
 
 					<button type="button" class="btn btn-burger mr-2 d-none d-xl-flex" data-toggle="sidebar" data-target="#sidebar" aria-controls="sidebar" aria-expanded="true" aria-label="Toggle sidebar">
@@ -87,7 +86,7 @@
 					<div class="navbar-content-section collapse navbar-collapse navbar-backdrop" id="navbarSearch">
 						<div class="d-flex align-items-center ml-lg-3">
 							<i class="fa fa-search text-white mr-n1 d-none d-lg-block"></i>
-							<input type="text" class="navbar-search-input px-1 pl-lg-4 ml-lg-n3 w-100 autofocus" name="s_keyword" placeholder=" SEARCH ..." aria-label="Search" />
+							<input type="text" class="navbar-search-input px-1 pl-lg-4 ml-lg-n3 w-100 autofocus" name="s_keyword" placeholder=" $msg.get('search') ..." aria-label="Search" />
 						</div>
 					</div>
 
@@ -105,6 +104,34 @@
 
 				<div class="navbar-menu collapse navbar-collapse navbar-backdrop" id="navbarMenu">
 
+                    <div class="navbar-nav">
+                        <button style="">
+                            <form name="form1" action="/admin/language.jsp" method="post" class="form-horizontal" enctype="multipart/form-data">
+                                <select name="language">
+                                <option value="EN">English</option>
+                                <option value="KO">Korean</option>
+                            </select>
+                                <input type="submit" value="submit">
+                            </form>
+                            ${form_script}
+
+                        </button>
+<!--                            <button onclick="langChange();">-->
+<!--                                <div id="lang">-->
+<!--                                    EN-->
+<!--                                </div>-->
+<!--                            </button>-->
+
+<!--                        <script>-->
+<!--                            function langChange() {-->
+<!--                                var lang = $("#lang").innerHTML;-->
+<!--                                if(lang === "EN"){-->
+<!--                                    lang == 'KO';-->
+<!--                                }-->
+<!--                            }-->
+<!--                        </script>-->
+
+                    </div>
 					<div class="navbar-nav">
 						<ul class="nav">
 							<li class="nav-item dropdown order-first order-lg-last">
@@ -124,6 +151,12 @@
 										<div class="dropdown-header">
 											Welcome, Admin
 										</div>
+                                        <div class="dropdown-header">
+                                            Welcome, Admin
+                                        </div>
+                                        <div class="dropdown-header">
+                                            Welcome, Admin
+                                        </div>
 										<div class="dropdown-divider"></div>
 									</div>
 
@@ -165,7 +198,7 @@
                                     <a href="/admin/index.jsp" class="nav-link">
                                         <i class="nav-icon fa fa-tachometer-alt nav-icon-round bgc-primary-tp1"></i>
                                         <span class="nav-text fadeable">
-                                            <span>Dashboard</span>
+                                            <span>$msg.get("dashboard")</span>
                                         </span>
                                     </a>
                                     <b class="sub-arrow"></b>
@@ -174,7 +207,7 @@
                                     <a href="/admin/menu/index.jsp" class="nav-link ">
                                         <i class="nav-icon fa fa-list nav-icon-round bgc-warning-tp1"></i>
                                         <span class="nav-text fadeable">
-                                            <span>Menu</span>
+                                            <span>$msg.get("menu")</span>
                                         </span>
                                         <!--
                                             <b class="caret caret-shown fa fa-minus text-80"></b>
@@ -186,7 +219,7 @@
                                     <a href="/admin/banner/index.jsp" class="nav-link ">
                                         <i class="nav-icon fa fa-desktop nav-icon-round bgc-info-tp1"></i>
                                         <span class="nav-text fadeable">
-                                            <span>Banner</span>
+                                            <span>$msg.get("banner")</span>
                                         </span>
                                     </a>
                                 </li>
@@ -194,7 +227,7 @@
                                     <a href="/admin/news/index.jsp" class="nav-link ">
                                         <i class="nav-icon fa fa-table nav-icon-round bgc-danger-tp1"></i>
                                         <span class="nav-text fadeable">
-                                            <span>News</span>
+                                            <span>$msg.get("news")</span>
                                         </span>
                                     </a>
                                 </li>
@@ -202,7 +235,7 @@
                                     <a href="/admin/blog/index.jsp" class="nav-link ">
                                         <i class="nav-icon fa fa-folder-open nav-icon-round bgc-pink-tp1"></i>
                                         <span class="nav-text fadeable">
-                                            <span>Blog</span>
+                                            <span>$msg.get("blog")</span>
                                         </span>
                                     </a>
                                 </li>
@@ -210,7 +243,7 @@
                                     <a href="/admin/user/index.jsp" class="nav-link ">
                                         <i class="nav-icon fa fa-users nav-icon-round bgc-success-tp1"></i>
                                         <span class="nav-text fadeable">
-                                            <span>User</span>
+                                            <span>$msg.get("user")</span>
                                         </span>
                                     </a>
                                 </li>
@@ -218,7 +251,7 @@
                                     <a href="/admin/info/index.jsp" class="nav-link ">
                                         <i class="nav-icon fa fa-user-secret nav-icon-round bgc-danger-tp1"></i>
                                         <span class="nav-text fadeable">
-                                            <span>Info</span>
+                                            <span>$msg.get("info")</span>
                                         </span>
                                     </a>
                                 </li>
@@ -226,7 +259,7 @@
                                     <a href="/admin/contact/index.jsp" class="nav-link ">
                                         <i class="nav-icon fa fa-edit nav-icon-round bgc-yellow-tp1"></i>
                                         <span class="nav-text fadeable">
-                                            <span>Comments</span>
+                                            <span>$msg.get("comments")</span>
                                         </span>
                                     </a>
                                 </li>

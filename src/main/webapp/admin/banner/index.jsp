@@ -3,6 +3,7 @@
 //Step1
 	BannerDao banner = new BannerDao();
 
+
 //Step2
 f.addElement("s_keyword", null, null);
 
@@ -21,6 +22,8 @@ DataSet list = lm.getDataSet();
 while(list.next()) {
 	list.put("reg_date", m.time("yyyy-MM-dd", list.s("reg_date")));
 }
+
+
 	pageTitle = "banner";
 //Step4
 //p.setDebug(out);

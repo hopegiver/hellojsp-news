@@ -2,5 +2,18 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 <entry key="name">이름</entry>
+<entry key="language">KO</entry>
 <entry key="course">과정</entry>
+<entry key="title">엘 정치 앱</entry>
+<entry key="dashboard">대시 보드</entry>
+<entry key="menu">메뉴</entry>
+<entry key="banner">배너</entry>
+<entry key="news">뉴스</entry>
+<entry key="blog">블로그</entry>
+<entry key="user">사용자</entry>
+<entry key="info">정보</entry>
+<entry key="comments">의견</entry>
+<entry key="new">새로운</entry>
+<entry key="search">검색</entry>
+
 </properties>

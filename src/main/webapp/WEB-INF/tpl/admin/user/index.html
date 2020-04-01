@@ -1,21 +1,21 @@
 <div class="page-content container" style="margin-left: 0">
 	<div class="page-header">
 		<h1 class="page-title text-primary-d2">
-			Menu
+			$msg.get("user")
 			<small class="page-info text-secondary-d2">
 				<i class="fa fa-angle-double-right text-80"></i>
-				Admin editable menu add
+				Admin editable user list
 			</small>
 		</h1>
 	</div>
 	<div class="row" style="margin-bottom: 20px;">
 		<div class="col-9" style="text-align: left;">
-			<a href="create.jsp" class="btn btn-info">New</a>
+			<a href="create.jsp" class="btn btn-info">$msg.get("new")</a>
 		</div>
 		<div class="col-3" style="text-align: right">
 			<form name="form1" method="get" class="form-inline" style="padding-left: 30px">
 				<input type="text" name="s_keyword" class="form-control">
-				<input class="btn btn-info" type="submit" value="Search">
+				<input class="btn btn-info" type="submit" value="$msg.get('search')">
 			</form>
 			${form_script}
 		</div>

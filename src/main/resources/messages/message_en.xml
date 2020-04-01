@@ -2,5 +2,17 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 <entry key="name">Name</entry>
+<entry key="language">EN</entry>
 <entry key="course">Course</entry>
+<entry key="title">El Politic App</entry>
+<entry key="dashboard">Dashboard</entry>
+<entry key="menu">Menu</entry>
+<entry key="banner">Banner</entry>
+<entry key="news">News</entry>
+<entry key="blog">Blog</entry>
+<entry key="user">User</entry>
+<entry key="info">Info</entry>
+<entry key="comments">Comments</entry>
+<entry key="new">New</entry>
+<entry key="search">Search</entry>
 </properties>

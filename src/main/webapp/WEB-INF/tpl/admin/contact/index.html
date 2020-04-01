@@ -1,7 +1,7 @@
 <div class="page-content container" style="margin-left: 0">
 	<div class="page-header">
 		<h1 class="page-title text-primary-d2">
-			Comments to the news
+			$msg.get("comments")
 			<small class="page-info text-secondary-d2">
 				<i class="fa fa-angle-double-right text-80"></i>
 				List
@@ -12,7 +12,7 @@
 		<div class="col-12" style="text-align: right">
 			<form name="form1" method="get" class="form-inline">
 				<input type="text" name="s_keyword" class="form-control">
-				<input class="btn btn-info" type="submit" value="Search">
+				<input class="btn btn-info" type="submit" value="$msg.get('search')">
 			</form>
 			${form_script}
 		</div>
