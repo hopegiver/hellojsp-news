@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
     <title>Hellojsp Admin</title>
-    <link rel="stylesheet" type="text/css" href="/css/spa/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="/css/spa/fontawesome.css">
-    <link rel="stylesheet" type="text/css" href="/css/spa/brands.css">
-    <link rel="stylesheet" type="text/css" href="/css/spa/regular.css">
-    <link rel="stylesheet" type="text/css" href="/css/spa/solid.css">
-    <link rel="stylesheet" type="text/css" href="/css/spa/ace.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/spa/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/spa/fontawesome.css">
+    <link rel="stylesheet" type="text/css" href="../css/spa/brands.css">
+    <link rel="stylesheet" type="text/css" href="../css/spa/regular.css">
+    <link rel="stylesheet" type="text/css" href="../css/spa/solid.css">
+    <link rel="stylesheet" type="text/css" href="../css/spa/ace.min.css">
   </head>
 
   <body>
@@ -96,9 +96,9 @@
                    </h2>
                 </div>
                </div>
-           
              </div>
-           </div>        </div>
+           </div>
+        </div>
 
 
         <div class="col-12 col-lg-7 py-lg-5 bgc-white px-0">
@@ -201,7 +201,8 @@
                         </div>
                     
                      </div>
-                    </div>                </div>
+                    </div>
+                </div>
 
 
                 <div class="tab-pane mh-100 px-3 px-lg-0 pb-3" id="id-tab-signup" data-swipe-prev="#id-tab-login">
@@ -224,97 +225,7 @@
                     
                         Create an Account
                     </div>
-                    
-                    <form class="form-row mt-4">
-                        <div class="form-group col-md-6 offset-md-3">
-                            <div class="d-flex align-items-center input-floating-label text-success-m1 brc-success-m2">
-                                <input type="text" class="form-control form-control-lg pr-4 shadow-none" id="id-signup-email" autocomplete="off" />
-                                <i class="fa fa-envelope text-grey-m2 ml-n4"></i>
-                                <label class="floating-label text-grey-l1 text-100 ml-n3" for="id-signup-email">Email</label>
-                            </div>
-                        </div>
-                    
-                        <div class="form-group col-md-6 offset-md-3 mt-1">
-                            <div class="d-flex align-items-center input-floating-label text-success-m1 brc-success-m2">
-                                <input type="text" class="form-control form-control-lg pr-4 shadow-none" id="id-signup-username" autocomplete="off" />
-                                <i class="fa fa-user text-grey-m2 ml-n4"></i>
-                                <label class="floating-label text-grey-l1 text-100 ml-n3" for="id-signup-username">Username</label>
-                            </div>
-                        </div>
-                    
-                        <div class="form-group col-md-6 offset-md-3 mt-1">
-                            <div class="d-flex align-items-center input-floating-label text-success-m1 brc-success-m2">
-                                <input type="password" class="form-control form-control-lg pr-4 shadow-none" id="id-signup-password" autocomplete="off" />
-                                <i class="fa fa-key text-grey-m2 ml-n4"></i>
-                                <label class="floating-label text-grey-l1 text-100 ml-n3" for="id-signup-password">Password</label>
-                            </div>
-                        </div>
-                    
-                        <div class="form-group col-md-6 offset-md-3 mt-1">
-                            <div class="d-flex align-items-center input-floating-label text-success-m1 brc-success-m2">
-                                <input type="password" class="form-control form-control-lg pr-4 shadow-none" id="id-signup-password2" autocomplete="off" />
-                                <i class="fas fa-sync-alt text-grey-m2 ml-n4"></i>
-                                <label class="floating-label text-grey-l1 text-100 ml-n3" for="id-signup-password2">Confirm Password</label>
-                            </div>
-                        </div>
-                    
-                        <div class="d-none form-group col-md-6 offset-md-3 my-2">
-                            <label class="text-secondary-m3 text-110 mb-25">
-                                Choose membership type
-                            </label>
-                            <div class="row d-flex mx-1 mx-lg-0 btn-group btn-group-toggle" data-toggle="buttons">		
-                                
-                                <div class="col-12 offset-sm-2 col-sm-3 px-1">
-                                    <label class="shadow-sm d-style border-1 w-100 my-1 py-3 bgc-white-tp2 btn-brc-tp btn btn-light-secondary btn-h-light-primary btn-a-light-primary radius-3">
-                                    <input type="radio" name="payments" id="payments1" autocomplete="off" class="invisible pos-abs">
-                                    
-                                    <span class="d-flex flex-column align-items-center">
-                                        <div class="font-bolder flex-grow-1">
-                                            Free
-                                        </div>
-                                    </span>
-                    
-                                    </label>
-                                </div>
-                    
-                                <div class="col-12 col-sm-6 px-1">
-                                    <label class="shadow-sm d-style border-2 w-100 my-1 py-3 bgc-white-tp2 btn-brc-tp btn btn-light-secondary btn-h-light-success btn-a-light-success radius-3">
-                                    <input type="radio" name="payments" id="payments2" autocomplete="off" class="invisible pos-abs">
-                                    <span class="d-flex flex-column align-items-center">
-                    
-                                        <span class="position-tr mr-2">
-                                            <span class="v-active pos-abs">
-                                                <i class="fa fa-crown text-orange text-110"></i>
-                                            </span>
-                                            <span class="v-n-active">
-                                                <i class="fa fa-crown text-secondary-l3 text-110"></i>
-                                            </span>
-                                        </span>
-                    
-                                        <div class="font-bolder flex-grow-1">
-                                            Premium							
-                                        </div>
-                                    </span>
-                                    </label>
-                                </div>
-                    
-                            </div>
-                    
-                        </div>
-                    
-                        <div class="form-group col-md-6 offset-md-3 mt-2">
-                            <label class="d-inline-block mt-3 mb-0 text-secondary-d2">
-                                <input type="checkbox" class="mr-1" id="id-agree" />
-                                <span class="text-secondary-d2">I have read and agree to <a href="#" class="text-blue">terms</a></span>
-                            </label>
-                    
-                            <button type="button" class="btn btn-success btn-block btn-md btn-bold mt-2 mb-3">
-                                Sign Up
-                            </button>
-                        </div>
-                    </form>
-                    
-                    
+
                     <div class="form-row w-100"><div class="col-12 col-md-6 offset-md-3 d-flex flex-column align-items-center justify-content-center">
                         
                         <hr class="brc-default-m4 mt-0 mb-2 w-100" />
@@ -343,7 +254,9 @@
                             </button>
                         </div>
                     
-                    </div></div>                </div>
+                    </div>
+                    </div>
+                </div>
 
 
                 <div class="tab-pane mh-100 px-3 px-lg-0 pb-3" id="id-tab-forgot" data-swipe-prev="#id-tab-login">
@@ -358,25 +271,7 @@
                         </h4>
                     </div>
                     
-                    <form class="form-row mt-4">
-                        <div class="form-group col-md-6 offset-md-3">
-                            <label class="text-secondary-m1 mb-3">
-                                Enter your email address and we'll send you the instructions:
-                            </label>
-                            <div class="d-flex align-items-center">
-                                <input type="email" class="form-control form-control-lg pr-4 shadow-none" id="id-recover-email" placeholder="Email" autocomplete="off" />
-                                <i class="fa fa-envelope text-grey-m2 ml-n4"></i>
-                            </div>
-                        </div>
-                    
-                    
-                        <div class="form-group col-md-6 offset-md-3 mt-1">
-                            <button type="button" class="btn btn-warning btn-block btn-md btn-bold mt-2 mb-4">
-                                Continue
-                            </button>
-                        </div>
-                    </form>
-                    
+
                     
                     <div class="form-row w-100"><div class="col-12 col-md-6 offset-md-3 d-flex flex-column align-items-center justify-content-center">
                         
@@ -389,7 +284,9 @@
                         </div>
                     
                     
-                    </div></div>                </div>
+                    </div>
+                    </div>
+                </div>
 
             </div><!-- .tab-content -->
         </div>
@@ -408,13 +305,13 @@
       </div><!-- /.main-container -->
 </div>
       <!-- include common vendor scripts used in demo pages -->
-      <script type="text/javascript" src="/js/spa/jquery.js"></script>
-      <script type="text/javascript" src="/js/spa/popper.js"></script>
-      <script type="text/javascript" src="/js/spa/bootstrap.js"></script>
-      <script type="text/javascript" src="/js/spa/underscore.js"></script>
-      <script type="text/javascript" src="/js/spa/hello.js"></script>
+      <script type="text/javascript" src="../js/spa/jquery.js"></script>
+      <script type="text/javascript" src="../js/spa/popper.js"></script>
+      <script type="text/javascript" src="../js/spa/bootstrap.js"></script>
+      <script type="text/javascript" src="../js/spa/underscore.js"></script>
+      <script type="text/javascript" src="../js/spa/hello.js"></script>
       <!-- include Ace script -->
-      <script type="text/javascript" src="/js/spa/ace.min.js"></script>
+      <script type="text/javascript" src="../js/spa/ace.min.js"></script>
       <script>
       var login = {
   		  dataUrl: 'api/login.jsp',
