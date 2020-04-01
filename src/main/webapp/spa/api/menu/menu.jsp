@@ -4,19 +4,11 @@
         MenuDao menu = new MenuDao();
 
         //Step2
-        DataSet menuInfo = menu.find("status != -1", "id, menu_name, module, module_id, parent_id, sort", "sort");
+        DataSet menuInfo = menu.find("status != -1 AND parent_id = 0", "id, name", "sort");
 
-        DataSet subMenu = menu.find("status != -1 AND parent_id != 0", "id, menu_name, module, module_id, sort, parent_id, reg_date", "sort");
+        DataSet subMenu = menu.find("status != -1 AND parent_id != 0", "id, name, parent_id", "sort");
 
-//        DataSet thirdSubMenu = menu.find("status != -1 AND parent_id != 0", "id, menu_name, module, module_id, sort, parent_id, reg_date", "sort");
-
-        while(subMenu.next()) {
-            subMenu.put("reg_date", m.time("yyyy-MM-dd", subMenu.s("reg_date")));
-        }
-
-        while(menuInfo.next()) {
-            menuInfo.put("reg_date", m.time("yyyy-MM-dd", menuInfo.s("reg_date")));
-        }
+//        DataSet thirdSubMenu = menu.find("status != -1 AND parent_id != 0", "id, name, module, module_id, sort, parent_id, reg_date", "sort");
 
         DataSet parent = menu.find("status != -1 AND parent_id = 0");
 
@@ -37,7 +29,7 @@
                 } else {
                         if(!info.next()) { m.jsError("No Data"); return; }
                         f.addElement("module", info.s("module"), "title:'module'");
-                        f.addElement("menu_name", info.s("menu_name"), "title:'menu_name', required:true");
+                        f.addElement("name", info.s("name"), "title:'name', required:true");
                         f.addElement("module_id", info.s("module_id"), "title:'module_id'");
                         f.addElement("parent_id", info.s("parent_id"), "title:'parent_id'");
                         f.addElement("sort", info.s("sort"), "title:'sort'");
@@ -46,7 +38,7 @@
                         if(m.isPost() && f.validate()) {
 
                                 menu.item("module", f.get("module"));
-                                menu.item("menu_name", f.get("menu_name"));
+                                menu.item("name", f.get("name"));
                                 menu.item("module_id", f.getInt("module_id", 0));
                                 menu.item("parent_id", f.getInt("parent_id", 0));
                                 menu.item("sort", f.get("sort"));
@@ -63,7 +55,7 @@
                         }
                 }
         } else {
-                f.addElement("menu_name", null, "title:'menu_name', required:true");
+                f.addElement("name", null, "title:'name', required:true");
                 f.addElement("parent_id", null, "title:'parent_id'");
                 f.addElement("module", null, "title:'module'");
                 f.addElement("module_id", "", "title:'module_id'");
@@ -72,7 +64,7 @@
                 if(m.isPost() && f.validate()) {
 
                         menu.item("module", f.get("module"));
-                        menu.item("menu_name", f.get("menu_name"));
+                        menu.item("name", f.get("name"));
                         menu.item("module_id", f.getInt("module_id", 0));
                         menu.item("parent_id", f.getInt("parent_id", 0));
                         menu.item("sort", f.get("sort"));
@@ -91,11 +83,15 @@
                 }
         }
 
+        String menuMain = menuInfo.toJson();
+        String menuSub = subMenu.toJson();
         //Step4
         pageTitle = "menu";
         p.setLoop("menuInfo", menuInfo);
         p.setLoop("subMenu", subMenu);
         p.setLoop("info", info);
+        p.setVar("menuMain", menuMain);
+        p.setVar("menuSub", menuSub);
         p.setVar("id", id);
         p.setLoop("parent", parent);
         p.setVar("form_script", f.getScript());

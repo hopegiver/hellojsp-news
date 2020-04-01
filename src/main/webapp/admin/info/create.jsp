@@ -4,7 +4,7 @@
 	InfoDao siteInfo = new InfoDao();
 
 //Step2
-	f.addElement("site_name", null, "title:'menu_name', required:true");
+	f.addElement("site_name", null, "title:'name', required:true");
 	f.addElement("email", null, "title:'parent_id', required:true");
 	f.addElement("phone", null, "title:'module'");
 	f.addElement("telephone", null, "title:'module_id'");

@@ -45,10 +45,10 @@
                     <ul class="nav navbar-nav navbar-right">
                         #foreach($menuInfo in $menuInfo)
                             #if(${menuInfo.parent_id} == 0)
-                                <li><a data-scroll-nav="${menuInfo.module_id}" href="#${menuInfo.module}" >${menuInfo.menu_name}</a></li>
+                                <li><a data-scroll-nav="${menuInfo.module_id}" href="#${menuInfo.module}" >${menuInfo.name}</a></li>
 <!--                                    #foreach($subMenu in $subMenu)-->
 <!--                                        #if(${menuInfo.id} == ${subMenu.parent_id})-->
-<!--                                            <li><a data-scroll-nav="${subMenu.module_id}" href="#${subMenu.module}" >${subMenu.menu_name}</a></li>-->
+<!--                                            <li><a data-scroll-nav="${subMenu.module_id}" href="#${subMenu.module}" >${subMenu.name}</a></li>-->
 <!--                                        #end-->
 <!--                                    #end-->
                             #end

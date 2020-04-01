@@ -13,7 +13,7 @@
                 <p class="footer-links">
                     #foreach($menuInfo in $menuInfo)
                         #if(${menuInfo.parent_id} == 0)
-                            <a data-scroll-nav="${menuInfo.module_id}" href="#${menuInfo.module}" >${menuInfo.menu_name}</a>
+                            <a data-scroll-nav="${menuInfo.module_id}" href="#${menuInfo.module}" >${menuInfo.name}</a>
                         #end
                     #end
                 </p>

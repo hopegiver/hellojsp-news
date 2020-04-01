@@ -1,7 +1,7 @@
 
 var list = {
-	templateUrl: 'tpl/index.html',
-	dataUrl: 'api/index.jsp',
+	templateUrl: 'tpl/blog/index.html',
+	dataUrl: 'api/blog/index.jsp',
 	submit: function(f) {
 		alert('회원 검색폼 서브밋');
 	}
@@ -23,29 +23,29 @@ var user = {
 };
 
 var edit = {
-	templateUrl: 'tpl/edit.html',
-	dataUrl: 'api/edit.jsp',
+	templateUrl: 'tpl/blog/edit.html',
+	dataUrl: 'api/blog/edit.jsp',
 	success: function(ret) {
 		location.href = '#/list';
 	}
 };
 
 var view = {
-	templateUrl: 'tpl/view.html',
-	dataUrl: 'api/view.jsp'
+	templateUrl: 'tpl/blog/view.html',
+	dataUrl: 'api/blog/view.jsp'
 };
 
 var add = {
-	templateUrl: 'tpl/add.html',
-	dataUrl: 'api/add.jsp',
+	templateUrl: 'tpl/blog/add.html',
+	dataUrl: 'api/blog/add.jsp',
 	success: function(ret) {
 		location.href = '#/list';
 	}
 };
 
 var del = {
-	templateUrl: 'tpl/delete.html',
-	dataUrl: 'api/delete.jsp',
+	templateUrl: 'tpl/blog/delete.html',
+	dataUrl: 'api/blog/delete.jsp',
 	success: function(ret) {
 		location.href = '#/list';
 	}
@@ -62,11 +62,11 @@ $(document).ready(function() {
 	$('#main').router({
 		routes: {
 			'/': list,
-			'/list': list,
-			'/edit': edit,
-			'/view': view,
-			'/add': add,
-			'/del': del,
+			'/blog/list': list,
+			'/blog/edit': edit,
+			'/blog/view': view,
+			'/blog/add': add,
+			'/blog/del': del,
 			'/logout': logout,
 			'/menu': menu,
 			'/user': user

@@ -2,10 +2,10 @@
 
         MenuDao menu = new MenuDao();
 
-        DataSet menuInfo = menu.find("status != -1", "id, menu_name, module, module_id, parent_id, sort", "sort");
+        DataSet menuInfo = menu.find("status != -1", "id, name, module, module_id, parent_id, sort", "sort");
         if(!menuInfo.next()) { m.jsError("No Data"); return; }
 
-//        DataSet subMenu = menu.find("status != -1 AND parent_id != 0", "menu_name, module, module_id, sort, parent_id", "sort");
+//        DataSet subMenu = menu.find("status != -1 AND parent_id != 0", "name, module, module_id, sort, parent_id", "sort");
 //        if(!subMenu.next()) { m.jsError("No Data"); return; }
 
         BannerDao banner = new BannerDao();

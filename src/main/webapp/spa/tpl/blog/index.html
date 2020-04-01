@@ -36,14 +36,14 @@
 					<% _.each(list, function(item) { %>
 					<tr>
 						<td><input type="checkbox" name="id" value="{{item.id}}"></td>
-						<td><a href="#/view?id={{item.id}}">{{item.id}}</a></td>
-						<td><a href="#/view?id={{item.id}}">{{item.subject}}</a></td>
+						<td><a href="#/blog/view?id={{item.id}}">{{item.id}}</a></td>
+						<td><a href="#/blog/view?id={{item.id}}">{{item.subject}}</a></td>
 						<td>{{item.content}}</td>
-						<td><a href="download.jsp?id={{item.id}}">{{item.att_file_name}}</a></td>
+						<td><a href="blog/download.jsp?id={{item.id}}">{{item.att_file_name}}</a></td>
 						<td>{{item.reg_date}}</td>
 						<td>
-							<a href="#/edit?id={{item.id}}" class="btn btn-sm btn-outline-primary">Edit</a>
-							<a href="#/del?id={{item.id}}" class="btn btn-sm btn-outline-danger">Delete</a>
+							<a href="#/blog/edit?id={{item.id}}" class="btn btn-sm btn-outline-primary">Edit</a>
+							<a href="#/blog/del?id={{item.id}}" class="btn btn-sm btn-outline-danger">Delete</a>
 						</td>
 					</tr>
 					<% }) %>

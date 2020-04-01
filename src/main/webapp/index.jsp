@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8" %><%@ include file="/init.jsp" %><%@ include file="/inc.jsp" %><%
 
-	DataSet menuInfo = menu.find("status != -1", "id, menu_name, module, module_id, parent_id, sort", "sort");
+	DataSet menuInfo = menu.find("status != -1", "id, name, module, module_id, parent_id, sort", "sort");
 	if(!menuInfo.next()) { m.jsError("No Data"); return; }
 
 	DataSet bannerList = banner.find("status != -1", "title, content, photo_name");

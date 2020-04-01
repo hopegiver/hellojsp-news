@@ -47,7 +47,7 @@
                 <div class="col-sm-3 col-form-label text-sm-right pr-0">
                     <label class="control-label col-sm-12">Menu Name: </label>
                 </div>
-                <div class="col-sm-6"><input type="text" name="menu_name"  class="form-control"></div>
+                <div class="col-sm-6"><input type="text" name="name"  class="form-control"></div>
             </div>
             <div class="form-group row">
                 <div class="col-sm-3 col-form-label text-sm-right pr-0">
@@ -73,7 +73,7 @@
                     <select class="form-control ace-select text-dark-m1 bgc-default-l5 bgc-h-warning-l3  brc-default-m3 brc-h-warning-m1" name="parent_id" id="select">
                         <option value="0">Select</option>
                         <% _.each(parent, function(item) { %>
-                        <option value="${parent.id}">{{item.menu_name}}</option>
+                        <option value="${parent.id}">{{item.name}}</option>
                         <% }) %>
                     </select>
                 </div>
@@ -95,23 +95,39 @@
             </div>
         </form>
         {{form_script}}
-        {{menuInfo}}
+
     </div>
     </div>
     <hr class="border-double my-4 brc-secondary-l2" />
     <script type="text/javascript" src="/js/spa/underscore.js"></script>
+    <script type="text/javascript" src="/admin-source/node_modules/jqtree/tree.jquery.js"></script>
     <script>
-        id = {id};
-        debugger;
-        var menuInfo = {menuInfo};
-        var subMenu = {subMenu};
+        var id = {{id}};
+        var menuMain = {{menuMain}};
+        var menuSub = {{menuSub}};
+
         var categoryData = [
-        Object.keys(menuInfo).forEach((key, index) => {
-            id: index.id
-            name: index.menu_name
-        })
-    ];
-        console.log(menuInfo);
+            _.each(menuMain, function(item){
+                console.log(item)
+                {
+                    id: item.id
+                    name: item.name
+                    children: [
+                        _.each(menuSub, function(info){
+                            if(item.id == info.parent_id){
+                                console.log(info)
+                                {
+                                    id: info.id
+                                    name: info.name
+                                }
+                            }
+                        }),
+                    ]
+                }
+            }),
+
+        ];
+        console.log(categoryData);
 
 
     $('#delete').click(function(){
@@ -164,7 +180,7 @@
                 var selectedNode = node;
                 if(node.children.length == 0) {
                     title.addClass('text-grey-d2 text-95');
-                    if(selectedNode.id == id ) {
+                    if( is_selected/*selectedNode.id == id*/ ) {
                         $(selectedIcon).insertBefore(title);
                     }
                     else {
