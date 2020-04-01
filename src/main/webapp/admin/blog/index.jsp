@@ -22,11 +22,6 @@ while(list.next()) {
 	list.put("reg_date", m.time("yyyy-MM-dd", list.s("reg_date")));
 }
 	pageTitle = "blog";
-	if(language == "EN"){
-		msg.setLocale(Locale.ENGLISH);
-	}else{
-		msg.setLocale(Locale.KOREAN);
-	};
 
 //Step4
 p.setDebug(out);
