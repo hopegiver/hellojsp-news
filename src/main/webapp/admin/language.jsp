@@ -5,7 +5,7 @@
     auth.put("language", f.get("language"));
     auth.save();
 
-    m.jsReplace("/admin/banner/index.jsp");
+    m.jsReplace("/admin/index.jsp");
 
     p.setBody("layout/layout_admin");
     p.setVar("form_script", f.getScript());

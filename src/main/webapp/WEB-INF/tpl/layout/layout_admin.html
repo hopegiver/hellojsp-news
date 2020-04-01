@@ -32,6 +32,8 @@
 
         <link rel="stylesheet" type="text/css" href="/admin-source/node_modules/bootstrap-markdown/css/bootstrap-markdown.min.css">
 
+        <link rel="stylesheet" type="text/css" href="/admin-source/node_modules/select2/dist/css/select2.css">
+
         <script type="text/javascript" src="/admin-source/node_modules/jqtree/tree.jquery.js"></script>
 
         <script type="text/javascript" src="/admin-source/application/js/src/fileinput.js"></script>
@@ -105,32 +107,16 @@
 				<div class="navbar-menu collapse navbar-collapse navbar-backdrop" id="navbarMenu">
 
                     <div class="navbar-nav">
-                        <button style="">
+                        <button style="padding: 0">
                             <form name="form1" action="/admin/language.jsp" method="post" class="form-horizontal" enctype="multipart/form-data">
-                                <select name="language">
-                                <option value="EN">English</option>
-                                <option value="KO">Korean</option>
-                            </select>
-                                <input type="submit" value="submit">
+                                <select name="language" class="select2 form-control" onchange="this.form.submit()">
+                                    <option value="">language</option>
+                                    <option value="EN">EN</option>
+                                    <option value="KO">KO</option>
+                                </select>
                             </form>
                             ${form_script}
-
                         </button>
-<!--                            <button onclick="langChange();">-->
-<!--                                <div id="lang">-->
-<!--                                    EN-->
-<!--                                </div>-->
-<!--                            </button>-->
-
-<!--                        <script>-->
-<!--                            function langChange() {-->
-<!--                                var lang = $("#lang").innerHTML;-->
-<!--                                if(lang === "EN"){-->
-<!--                                    lang == 'KO';-->
-<!--                                }-->
-<!--                            }-->
-<!--                        </script>-->
-
                     </div>
 					<div class="navbar-nav">
 						<ul class="nav">
